@@ -1,0 +1,54 @@
+{
+  "exp_class": "A_unit",
+  "inp_file": "toy_network.inp",
+  "inp_sha256": "9d90783fb3087bf59d794a9704c4c925c5b28a3c17e62049a5194c8ad2adf68b",
+  "run_started_utc": "2026-11-11T14:40:41.633052+00:00",
+  "run_finished_utc": "2026-11-11T14:40:41.694956+00:00",
+  "simulated_seconds": 7191.0,
+  "software": {
+    "python": "3.12.7",
+    "pyswmm": "2.2.0",
+    "swmm_engine": "5.2.4",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "continuity_error_pct": {
+    "pyswmm_runoff": 0.0,
+    "pyswmm_flow_routing": 0.0,
+    "rpt_runoff": -0.046,
+    "rpt_flow_routing": -0.008
+  },
+  "continuity_threshold_pct": 5.0,
+  "continuity_within_threshold": true,
+  "continuity_note": "Pass/fail uses the .rpt report values. pyswmm 2.2.0 Simulation.runoff_error and flow_routing_error returned 0.0 in this step-loop usage; they are recorded for comparison only.",
+  "node_peak_depth_m": {
+    "J1": 0.4758,
+    "J2": 0.5301,
+    "J3": 1.0101,
+    "J4": 0.6083,
+    "J5": 0.6076,
+    "O1": 0.6071
+  },
+  "node_flood_volume_m3": {
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 0.0,
+    "O1": 0.0
+  },
+  "node_flood_minutes": {
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 0.0,
+    "O1": 0.0
+  },
+  "link_peak_flow_cms": {
+    "C1": 0.3681,
+    "C2": 0.6309,
+    "C3": 0.8944,
+    "C4": 1.1129,
+    "C5": 1.5074
+  }
+}
