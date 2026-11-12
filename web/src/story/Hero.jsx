@@ -43,16 +43,11 @@ const Hero = forwardRef(function Hero(_, outerRef) {
           </span>
         </span>
       </h1>
-      <p className="hero-sub">
-        Urban flood predictions are only as reliable as the drainage maps behind them, and those maps are incomplete.
-      </p>
-      <p className="hero-sub2">
-        A physics-based flood simulation and decision-support framework that audits the map, propagates what it does not
-        know, and explains why a street floods. It is not a live digital twin.
-      </p>
+      <p className="hero-sub">Drainage maps are incomplete. Floods don&rsquo;t wait.</p>
+      <p className="hero-sub2">A physics-based flood simulation and decision-support framework, not a live digital twin.</p>
       <div className="scroll-cue" aria-hidden="true">
-        <div className="line" />
         <span className="kicker">Scroll to begin</span>
+        <div className="line" />
       </div>
     </section>
   )

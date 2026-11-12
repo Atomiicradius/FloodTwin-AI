@@ -104,16 +104,16 @@ export function ChartReveal({ className, children, delay = 0.1 }) {
         const len = p.getTotalLength?.() || 600
         gsap.set(p, { strokeDasharray: len, strokeDashoffset: len })
       })
-      gsap.set(bars, { scaleY: 0, transformOrigin: '50% 100%', transformBox: 'fill-box' })
-      gsap.set(fades, { opacity: 0 })
+      if (bars.length) gsap.set(bars, { scaleY: 0, transformOrigin: '50% 100%', transformBox: 'fill-box' })
+      if (fades.length) gsap.set(fades, { opacity: 0 })
       ScrollTrigger.create({
         trigger: el,
         start: 'top 88%',
         once: true,
         onEnter: () => {
-          gsap.to(paths, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut', delay, stagger: 0.12, clearProps: 'strokeDasharray,strokeDashoffset' })
-          gsap.to(bars, { scaleY: 1, duration: 0.9, ease: 'power3.out', delay, stagger: { each: 0.012, from: 'start' }, clearProps: 'transform' })
-          gsap.to(fades, { opacity: 1, duration: 1.2, delay: delay + 0.4, clearProps: 'opacity' })
+          if (paths.length) gsap.to(paths, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut', delay, stagger: 0.12, clearProps: 'strokeDasharray,strokeDashoffset' })
+          if (bars.length) gsap.to(bars, { scaleY: 1, duration: 0.9, ease: 'power3.out', delay, stagger: { each: 0.012, from: 'start' }, clearProps: 'transform' })
+          if (fades.length) gsap.to(fades, { opacity: 1, duration: 1.2, delay: delay + 0.4, clearProps: 'opacity' })
         },
       })
     }, el)

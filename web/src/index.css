@@ -24,7 +24,7 @@
   --glass-strong: rgba(9, 16, 30, 0.82);
   --hairline: rgba(255, 255, 255, 0.085);
   --hairline-2: rgba(255, 255, 255, 0.16);
-  --accent-h: 200;
+  --accent-h: 200; /* constant: one palette for the whole page */
   color-scheme: dark;
 }
 
@@ -112,37 +112,21 @@ p {
   height: 100%;
   display: block;
 }
+html[data-stage='hero'] .stage-vignette {
+  background: linear-gradient(270deg, transparent 52%, rgba(4, 7, 13, 0.62) 92%);
+}
+html[data-stage='wide'] .stage-vignette {
+  background: radial-gradient(120% 100% at 60% 40%, transparent 55%, rgba(4, 7, 13, 0.5));
+}
 .stage-vignette {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, transparent 38%, rgba(4, 7, 13, 0.78) 74%),
-    radial-gradient(120% 90% at 20% 50%, transparent 55%, rgba(4, 7, 13, 0.7));
+    linear-gradient(90deg, transparent 40%, rgba(4, 7, 13, 0.7) 70%),
+    radial-gradient(130% 100% at 30% 50%, transparent 60%, rgba(4, 7, 13, 0.5));
   transition: opacity 0.6s;
 }
-.stage-ghost {
-  position: absolute;
-  left: 5vw;
-  bottom: 9vh;
-  max-width: 52vw;
-  pointer-events: none;
-}
-.stage-ghost .display {
-  font-size: clamp(48px, 5.2vw, 104px);
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.16);
-  white-space: nowrap;
-}
-.stage-tag {
-  position: absolute;
-  left: 5vw;
-  top: 120px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .banner {
   position: fixed;
   top: 0;
@@ -244,6 +228,17 @@ p {
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
 }
 
+.top-pills {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.top-pills.is-hero {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
 .toggle-switch {
   display: inline-flex;
   align-items: center;
@@ -366,25 +361,28 @@ p {
   will-change: transform, opacity;
 }
 .hero-sub {
-  max-width: 640px;
-  margin-top: 34px;
-  font-size: clamp(18px, 1.55vw, 26px);
-  line-height: 1.38;
-  color: #c8d3e6;
+  max-width: 760px;
+  margin-top: 36px;
+  font-size: clamp(24px, 2.3vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #dbe5f5;
 }
 .hero-sub2 {
-  max-width: 560px;
+  max-width: 520px;
   margin-top: 16px;
   color: var(--muted-foreground);
-  font-size: 14.5px;
+  font-size: 15px;
 }
 .scroll-cue {
   position: absolute;
-  left: 8vw;
-  bottom: 44px;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 .scroll-cue .line {
   width: 1px;
@@ -461,7 +459,7 @@ p {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: radial-gradient(90% 60% at 0% 0%, hsl(var(--accent-h) 90% 60% / 0.07), transparent 70%);
+  background: radial-gradient(90% 60% at 0% 0%, rgba(255, 255, 255, 0.035), transparent 70%);
 }
 .glass > * {
   position: relative;

@@ -16,7 +16,8 @@ import {
 import { STEPS } from './copy.js'
 import { ScrollTrigger, destroySmoothScroll, initSmoothScroll, scrollToTarget, stageBus } from './motion/index.js'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip.jsx'
-import Stage from './story/Stage.jsx'
+import StageHost from './stage/StageHost.jsx'
+import { stageState } from './stage/state.js'
 import Hero from './story/Hero.jsx'
 import { Pill } from './story/kit.jsx'
 import { CfSection, EventSection, EvidenceSection, SimSection } from './story/sections1.jsx'
@@ -150,6 +151,23 @@ export default function App() {
     }
   }, [])
 
+  // publish what the stage needs (read every frame, no re-render)
+  useEffect(() => {
+    Object.assign(stageState, {
+      net,
+      active,
+      selSeg,
+      simStage,
+      baseVol: baseRun.floodVol,
+      cfVol: cfRun.floodVol,
+      freqBase: ens.freqBase,
+      freqCf: ens.freqCf,
+    })
+    document.documentElement.dataset.stage = active === 0 ? 'hero' : active === 7 ? 'wide' : 'chapter'
+    stageState.version++
+    window.dispatchEvent(new Event('stage-update'))
+  }, [net, active, selSeg, simStage, baseRun, cfRun, ens])
+
   const goTo = useCallback((i) => {
     const n = Math.max(0, Math.min(STEPS.length, i))
     if (n === 0) scrollToTarget(0, { duration: 1.6 })
@@ -173,7 +191,6 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [active, goTo])
 
-  const sectionTitle = active === 0 ? '' : STEPS[active - 1].title
   const narration = active === 0 ? INTRO_NARRATION : STEPS[active - 1].narration
 
   return (
@@ -193,13 +210,15 @@ export default function App() {
           FloodTwin-AI
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div className={`top-pills ${active === 0 ? 'is-hero' : ''}`}>
           <button className="pill pill-live" onClick={() => goTo(1)} title="Change storm event">
-            <span className="dot" style={{ width: 6, height: 6 }} />
-            {ev.id} · {ev.role === 'held-out' ? 'held out' : 'calibration'}
-          </button>
-          <Pill tone="amber" icon={<FlaskConical size={12} />}>Synthetic data</Pill>
-          <Pill title="Experiment class B: synthetic scenario experiment">Class B</Pill>
-          <Pill>Prototype v0</Pill>
+              <span className="dot" style={{ width: 6, height: 6 }} />
+              {ev.id} · {ev.role === 'held-out' ? 'held out' : 'calibration'}
+            </button>
+            <Pill tone="amber" icon={<FlaskConical size={12} />}>Synthetic data</Pill>
+            <Pill title="Experiment class B: synthetic scenario experiment">Class B</Pill>
+            <Pill>Prototype v0</Pill>
+          </div>
           <label className="toggle-switch" style={{ marginLeft: 8 }}>
             <input type="checkbox" checked={presenter} onChange={(e) => setPresenter(e.target.checked)} />
             <span className="track" />
@@ -208,7 +227,7 @@ export default function App() {
         </div>
       </header>
 
-      <Stage active={active} sectionTitle={sectionTitle} presenter={presenter} wide={active === 7} />
+      <StageHost />
 
       <nav className="progress" aria-label="Sections">
         {LABELS.map((l, i) => (

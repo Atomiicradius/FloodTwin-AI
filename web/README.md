@@ -19,8 +19,14 @@ One continuous scroll narrative: a pinned full-height stage behind, story panels
 
 - Stack: React + Vite, Tailwind v4, shadcn-style components (`src/components/ui`: Slider, Tabs, Sheet, Tooltip over Radix), GSAP + ScrollTrigger, Lenis.
 - Motion system in `src/motion/`: `initSmoothScroll` (Lenis driven by the GSAP ticker), `Reveal`, `CountUp`, `ChartReveal` (draw-in lines, growing bars). All respect `prefers-reduced-motion` (Lenis off, content shown immediately).
-- Story in `src/story/`: `Hero`, `Stage` (canvas rain crossfading to flowing water lines; **placeholder for the map**), `sections1.jsx` (1-4), `sections2.jsx` (5-7), shared `kit.jsx`.
-- Fully offline: fonts are bundled (`@fontsource`), no CDN, no tiles. `MapView.jsx` and `legacy-map.css` are kept untouched for the map's return.
+- Story in `src/story/`: `Hero`, `sections1.jsx` (1-4), `sections2.jsx` (5-7), shared `kit.jsx`.
+- Stage in `src/stage/` (pinned, behind the story, fed by `stageState` which `App` writes each render):
+  - `Scene3D.jsx` (three + react-three-fiber, one Bloom pass): GLSL ambient water (rain ripples driven by the chapter, slow caustics),
+    procedural terrain with shader contours, emissive drain tubes with flow particles, flood water at flooded nodes, step-4 baseline ring,
+    step-6 ensemble ghost blooms, step-7 abstract graph, hero rain. `CameraRig.jsx` scrubs a camera path from the scroll position.
+  - `LiteStage.jsx`: a 2D canvas version of the same stage. Open the page with `?lite` on a weak machine (also used automatically if WebGL is unavailable). It does not load three.js.
+  - Reduced motion: static frame, no camera motion. Rendering pauses when the tab is hidden. DPR is capped at 2 (1.25 in lite).
+- Fully offline: fonts are bundled (`@fontsource`), no CDN, no tiles. `MapView.jsx` and `legacy-map.css` are kept for reference only.
 
 Sections: 1 Event & location - 2 Infrastructure evidence - 3 Baseline simulation - 4 Counterfactual -
 5 Interactions - 6 Uncertainty - 7 AI scalability.
