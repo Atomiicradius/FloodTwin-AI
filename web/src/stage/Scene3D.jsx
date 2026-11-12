@@ -48,7 +48,7 @@ function Ambient({ reduced }) {
     const t = reduced ? 0 : state.clock.elapsedTime
     const target = RAIN_BY_STEP[stageState.active] ?? 0.15
     const s = sim.current
-    s.rain += (target - s.rain) * Math.min(1, dt * 1.6)
+    s.rain += (target - s.rain) * Math.min(1, Math.min(dt, 0.1) * 1.6)
     if (!reduced && t > s.next) {
       const r = ripples[s.slot++ % ripples.length]
       const a = size.width / size.height
@@ -102,6 +102,13 @@ function Invalidator() {
 export default function Scene3D() {
   const reduced = useMemo(prefersReduced, [])
   const [visible, setVisible] = useState(!document.hidden)
+  // if the GPU drops the WebGL context (heavy recompute, driver reset), rebuild the whole canvas instead of staying black
+  const [epoch, setEpoch] = useState(0)
+  const watch = (state) => {
+    const el = state.gl.domElement
+    el.addEventListener('webglcontextlost', (e) => e.preventDefault())
+    el.addEventListener('webglcontextrestored', () => setEpoch((n) => n + 1))
+  }
   useEffect(() => {
     const f = () => setVisible(!document.hidden)
     document.addEventListener('visibilitychange', f)
@@ -109,6 +116,8 @@ export default function Scene3D() {
   }, [])
   return (
     <Canvas
+      key={epoch}
+      onCreated={watch}
       dpr={[1, 2]}
       frameloop={reduced ? 'demand' : visible ? 'always' : 'never'}
       gl={{ antialias: false, powerPreference: 'high-performance', alpha: false }}

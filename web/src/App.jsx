@@ -1,5 +1,4 @@
 import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { FlaskConical } from 'lucide-react'
 import { buildNetwork } from './data/network.js'
 import { buildEvents } from './data/events.js'
 import { buildGrid } from './data/terrain.js'
@@ -19,7 +18,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import StageHost from './stage/StageHost.jsx'
 import { stageState } from './stage/state.js'
 import Hero from './story/Hero.jsx'
-import { Pill } from './story/kit.jsx'
 import { CfSection, EventSection, EvidenceSection, SimSection } from './story/sections1.jsx'
 import { AiSection, InteractionSection, UncertaintySection } from './story/sections2.jsx'
 
@@ -195,11 +193,6 @@ export default function App() {
 
   return (
     <TooltipProvider delayDuration={120}>
-      <div className="banner">
-        <i />
-        Prototype · synthetic demo data · invented catchment, storms and reports · illustrates the workflow, not a real result
-      </div>
-
       <header className={`topbar ${active > 0 ? 'solid' : ''}`}>
         <div className="brandmark">
           <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
@@ -215,9 +208,6 @@ export default function App() {
               <span className="dot" style={{ width: 6, height: 6 }} />
               {ev.id} · {ev.role === 'held-out' ? 'held out' : 'calibration'}
             </button>
-            <Pill tone="amber" icon={<FlaskConical size={12} />}>Synthetic data</Pill>
-            <Pill title="Experiment class B: synthetic scenario experiment">Class B</Pill>
-            <Pill>Prototype v0</Pill>
           </div>
           <label className="toggle-switch" style={{ marginLeft: 8 }}>
             <input type="checkbox" checked={presenter} onChange={(e) => setPresenter(e.target.checked)} />

@@ -74,7 +74,10 @@ const RADIUS = { primary: 0.034, secondary: 0.024, tertiary: 0.017 }
 const SPEED = { primary: 0.62, secondary: 0.5, tertiary: 0.4 }
 const PER = { primary: 7, secondary: 5, tertiary: 3 }
 const clamp01 = (v) => Math.min(1, Math.max(0, v))
-const damp = (cur, target, rate, dt) => cur + (target - cur) * Math.min(1, dt * rate)
+const damp = (cur, target, rate, dt) => {
+  const v = cur + (target - cur) * Math.min(1, Math.min(dt, 0.1) * rate)
+  return Number.isFinite(v) ? v : Number.isFinite(target) ? target : 0
+}
 
 export default function Network({ net }) {
   const reduced = useMemo(prefersReduced, [])

@@ -4,7 +4,8 @@ export const Y_SCALE = 0.2 // vertical exaggeration per metre
 export const Y0 = 899
 
 // flood disc radius (scene units) from a node flood volume (m3)
-export const floodRadius = (vol) => (vol > 40 ? 0.1 + Math.sqrt(vol) * 0.0095 : 0)
+// guarded: a NaN/Infinity here would poison the GPU frame (bloom spreads it to every pixel -> black screen)
+export const floodRadius = (vol) => (Number.isFinite(vol) && vol > 40 ? Math.min(0.1 + Math.sqrt(vol) * 0.0095, 3) : 0)
 
 export const STATUS_HEX = {
   observed: '#a78bfa',

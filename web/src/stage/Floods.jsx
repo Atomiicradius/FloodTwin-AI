@@ -6,7 +6,10 @@ import { COLORS, SC, Y_SCALE, Y0, floodRadius, nodeWorld, worldOf } from './geom
 import { elevation } from '../data/terrain.js'
 import { prefersReduced, stageState } from './state.js'
 
-const damp = (cur, target, rate, dt) => cur + (target - cur) * Math.min(1, dt * rate)
+const damp = (cur, target, rate, dt) => {
+  const v = cur + (target - cur) * Math.min(1, Math.min(dt, 0.1) * rate)
+  return Number.isFinite(v) ? v : Number.isFinite(target) ? target : 0
+}
 const clamp01 = (v) => Math.min(1, Math.max(0, v))
 
 // mean terrain height on a ring of radius r (scene units) around a node: the water level that makes the shoreline land near r
