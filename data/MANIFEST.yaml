@@ -1,0 +1,169 @@
+# data/MANIFEST.yaml — source of truth for every raw input (owner: Role A).
+# `python -m floodtwin.geo.fetch` downloads each entry into data/raw/<id>/<filename>,
+# records sha256/size/access date on first download, and verifies them afterwards.
+# Licence strings are copied from the publisher's catalogue metadata; do not edit by hand
+# except to add a new source. Never commit the data files themselves.
+manifest_version: 1
+sources:
+  - id: swd_primary_2022
+    title: Bengaluru Primary Stormwater Drains Map - 2022
+    publisher: OpenCity (data.opencity.in), originally KSRSAC
+    dataset_page: https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps
+    url: https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/114758e9-c356-46e0-afdb-e1d52f972863/download/03eea514-d4bf-4cd9-8c7b-f904b1ea83f2.kml
+    filename: swd_primary_2022.kml
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: drainage
+    hierarchy: primary
+  - id: swd_secondary_2022
+    title: Bengaluru Secondary Stormwater Drains Map - 2022
+    publisher: OpenCity (data.opencity.in), originally KSRSAC
+    dataset_page: https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps
+    url: https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/4b26cd1b-7956-418d-92e4-35275caf547a/download/7033efa5-2382-4e4a-8884-5715698eac71.kml
+    filename: swd_secondary_2022.kml
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: drainage
+    hierarchy: secondary
+  - id: swd_tertiary_2022
+    title: Bengaluru Tertiary Stormwater Drains Map 2022
+    publisher: OpenCity (data.opencity.in), originally KSRSAC
+    dataset_page: https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps
+    url: https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/aa20362c-9769-46dc-9a88-c100504f6d4e/download/79494624-2682-4f31-a0e5-2fa26b867304.kml
+    filename: swd_tertiary_2022.kml
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: drainage
+    hierarchy: tertiary
+  - id: swd_all_2022
+    title: Bengaluru Stormwater Drains Map 2022 (all drains)
+    publisher: OpenCity (data.opencity.in), originally KSRSAC
+    dataset_page: https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps
+    url: https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/801779e6-ed81-457d-bd2a-7e3cc95ad1ee/download/e42be0cb-1bf4-4a7b-9c78-0c0dbdae3237.kml
+    filename: swd_all_2022.kml
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: drainage
+    hierarchy: all
+  - id: dem_cop30_n12e077
+    title: Copernicus DEM GLO-30 tile N12 E077 (DSM, 1 arc-second)
+    publisher: ESA / Copernicus, distributed via AWS Open Data (copernicus-dem-30m)
+    dataset_page: https://registry.opendata.aws/copernicus-dem/
+    url: https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N12_00_E077_00_DEM/Copernicus_DSM_COG_10_N12_00_E077_00_DEM.tif
+    filename: Copernicus_DSM_COG_10_N12_00_E077_00_DEM.tif
+    licence: Copernicus DEM licence (free, attribution "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA")
+    crs: EPSG:4326 (horizontal), EGM2008 (vertical)
+    kind: dem
+    notes: Digital SURFACE model (includes buildings/trees). Candidate 1.
+  - id: dem_srtm_n12e077
+    title: SRTM GL1 tile N12E077 (.hgt, 1 arc-second) from Mapzen/AWS terrain tiles (skadi)
+    publisher: NASA/USGS SRTM, redistributed by AWS Open Data Terrain Tiles
+    dataset_page: https://registry.opendata.aws/terrain-tiles/
+    url: https://s3.amazonaws.com/elevation-tiles-prod/skadi/N12/N12E077.hgt.gz
+    filename: N12E077.hgt.gz
+    licence: SRTM public domain (NASA/USGS); terrain-tiles attribution per https://github.com/tilezen/joerd/blob/master/docs/attribution.md
+    crs: EPSG:4326 (horizontal), EGM96 (vertical)
+    kind: dem
+    notes: Acquired February 2000, so it pre-dates much of Bengaluru's urban growth. Candidate 2.
+  - id: dem_cop30_n13e077
+    title: Copernicus DEM GLO-30 tile N13 E077 (DSM, 1 arc-second)
+    publisher: ESA / Copernicus, distributed via AWS Open Data (copernicus-dem-30m)
+    dataset_page: https://registry.opendata.aws/copernicus-dem/
+    url: https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N13_00_E077_00_DEM/Copernicus_DSM_COG_10_N13_00_E077_00_DEM.tif
+    filename: Copernicus_DSM_COG_10_N13_00_E077_00_DEM.tif
+    licence: Copernicus DEM licence (as dem_cop30_n12e077)
+    crs: EPSG:4326 (horizontal), EGM2008 (vertical)
+    kind: dem
+    notes: Northern Bengaluru (lat > 13.0) lies in this tile.
+  - id: dem_srtm_n13e077
+    title: SRTM GL1 tile N13E077 (.hgt, 1 arc-second) from AWS terrain tiles (skadi)
+    publisher: NASA/USGS SRTM, redistributed by AWS Open Data Terrain Tiles
+    dataset_page: https://registry.opendata.aws/terrain-tiles/
+    url: https://s3.amazonaws.com/elevation-tiles-prod/skadi/N13/N13E077.hgt.gz
+    filename: N13E077.hgt.gz
+    licence: SRTM public domain (as dem_srtm_n12e077)
+    crs: EPSG:4326 (horizontal), EGM96 (vertical)
+    kind: dem
+  - id: flood_vulnerable_locations
+    title: Map of Locations Vulnerable to Flooding in Bengaluru Urban
+    publisher: OpenCity (data.opencity.in)
+    dataset_page: https://data.opencity.in/dataset/flooding-locations-in-bengaluru-urban
+    url: https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/a7d8a01f-1fbc-41e1-85f0-f15ea16b2d27/download/6b3c63b0-f461-4e9c-a2c2-006f734c5b41.kml
+    filename: flood_vulnerable_locations.kml
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: flood_locations
+  - id: flood_prone_locations
+    title: Flood Prone Locations Map
+    publisher: OpenCity (data.opencity.in)
+    dataset_page: https://data.opencity.in/dataset/flooding-locations-in-bengaluru-urban
+    url: https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/d90fe768-caba-4c6e-b6b5-a75acd5e88a9/download/00fb1229-dcfd-4f59-813f-885e0c629add.kml
+    filename: flood_prone_locations.kml
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: flood_locations
+  - id: bbmp_low_lying_areas
+    title: BBMP Low Lying Areas
+    publisher: OpenCity (data.opencity.in)
+    dataset_page: https://data.opencity.in/dataset/flooding-locations-in-bengaluru-urban
+    url: https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/62ceac3b-f6e2-4dd1-ae9f-be80b1f2fda8/download/8e87a2fc-e014-4c6e-81f1-d5cb4db57a46.kml
+    filename: bbmp_low_lying_areas.kml
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: flood_locations
+  - id: ksndmc_trg_bengaluru_urban
+    title: Bengaluru Urban - Telemetric Rain Gauge Locations
+    publisher: OpenCity (data.opencity.in), originally KSNDMC
+    dataset_page: https://data.opencity.in/dataset/list-of-automated-weater-stations-aws-in-bengaluru-urban-rural-districts
+    url: https://data.opencity.in/dataset/2b1fe5d6-933b-43a7-a0bd-8b2e7e624c82/resource/525d8f3c-67a5-4a00-a072-65b96635cb89/download/c5ca0f85-617e-47f4-925f-d14cb01ed242.kml
+    filename: ksndmc_trg_bengaluru_urban.kml
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: rain_stations
+  - id: ksndmc_aws_bengaluru_list
+    title: List of AWS in Bengaluru Urban and Rural Districts
+    publisher: OpenCity (data.opencity.in), originally KSNDMC
+    dataset_page: https://data.opencity.in/dataset/list-of-automated-weater-stations-aws-in-bengaluru-urban-rural-districts
+    url: https://data.opencity.in/dataset/2b1fe5d6-933b-43a7-a0bd-8b2e7e624c82/resource/f7df68b1-2621-4786-8e3b-bfe81efa03ab/download/f782dd0d-7e10-4c34-ab8e-a1addbd22321.csv
+    filename: ksndmc_aws_bengaluru_list.csv
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: EPSG:4326
+    kind: rain_stations
+  - id: bbmp_zones_2022
+    title: BBMP Zone Boundaries - 2022
+    publisher: OpenCity (data.opencity.in)
+    dataset_page: https://data.opencity.in/dataset/bbmp-ward-information
+    url: https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/4723f667-b02b-45e5-a8fc-2bc6ee7bd8b9/download/41480104-eb34-44d3-936d-47b9a2ff4042.kml
+    filename: bbmp_zones_2022.kml
+    licence: Not stated in OpenCity catalogue (license_id null) — confirm before redistribution
+    crs: EPSG:4326
+    kind: admin
+  - id: bbmp_wards_2022
+    title: BBMP Ward Map - 2022
+    publisher: OpenCity (data.opencity.in)
+    dataset_page: https://data.opencity.in/dataset/bbmp-ward-information
+    url: https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/9423dbca-db2b-47df-823e-8546f4fb8f2a/download/53418b48-c08d-43bd-be0e-31b46cd0f798.kml
+    filename: bbmp_wards_2022.kml
+    licence: Not stated in OpenCity catalogue (license_id null) — confirm before redistribution
+    crs: EPSG:4326
+    kind: admin
+  - id: osm_waterways_snapshot
+    title: OpenStreetMap waterways (drain|canal|stream|river|ditch) in the Bengaluru bbox, Overpass snapshot
+    publisher: OpenStreetMap contributors via overpass-api.de
+    dataset_page: https://wiki.openstreetmap.org/wiki/Key:waterway
+    url: https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A300%5D%3Bway%5B%22waterway%22~%22%5E%28drain%7Ccanal%7Cstream%7Criver%7Cditch%29%24%22%5D%2812.83%2C77.46%2C13.15%2C77.79%29%3Bout%20geom%3B
+    filename: osm_waterways.json
+    licence: ODbL 1.0 (© OpenStreetMap contributors)
+    crs: EPSG:4326
+    kind: independent_mapping
+    notes: Live query; the locked sha256 pins the snapshot used. Crowd-mapped, partly from imagery; independent of KSRSAC but NOT ground truth. Used only for the audit's positional-agreement check.
+  - id: imd_bengaluru_monthly_rain
+    title: Bengaluru Monthly Rainfall Data (1900-2025), IMD
+    publisher: OpenCity (data.opencity.in), originally IMD
+    dataset_page: https://data.opencity.in/dataset/bengaluru-rainfall
+    url: https://data.opencity.in/dataset/a7385a69-21c9-4d49-b066-a96dd86a24f6/resource/580edb55-4384-46c6-aeb8-2c21f3425d72/download/580edb55-4384-46c6-aeb8-2c21f3425d72.csv
+    filename: imd_bengaluru_monthly_rain.csv
+    licence: Other (Public Domain) per OpenCity catalogue (license_id other-pd)
+    crs: none (tabular)
+    kind: rainfall_context
+    notes: Monthly city totals only; context for event selection, NOT usable as event forcing.

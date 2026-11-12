@@ -1,0 +1,1581 @@
+{
+ "note": "Raw evidence for reports/02_source_provenance_audit.md. Generated read-only on 2026-11-12; no data or outputs were modified.",
+ "local_inventory": {
+  "checked_utc": "2026-11-12T10:14:09+00:00",
+  "files": {
+   "swd_primary_2022": {
+    "path": "data\\raw\\swd_primary_2022\\swd_primary_2022.kml",
+    "exists": true,
+    "bytes": 494239,
+    "sha256": "43063312663ee6080817bda73166ee3cb88e78a37b48869504a8751093388004",
+    "md5": "5d70c7e3a678a2b67572e2b4215a2109",
+    "md5_b64": "XXDH46Z4orZ1cuK0IVohCQ==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 163,
+     "geom_types": {
+      "MultiLineString": 163
+     },
+     "bounds_lonlat": [
+      77.4712,
+      12.8397,
+      77.7789,
+      13.1421
+     ],
+     "attributes": [
+      "kml_name",
+      "OBJECTID_1",
+      "OBJECTID",
+      "Length",
+      "SHAPE_Leng",
+      "Shape.STLength()"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "swd_secondary_2022": {
+    "path": "data\\raw\\swd_secondary_2022\\swd_secondary_2022.kml",
+    "exists": true,
+    "bytes": 1262361,
+    "sha256": "57bbe5346eb2e482e8e611a2f4a0411468921dfe5c05dbe247c1e6a9a16550c1",
+    "md5": "e4b9e7466db09381c5befa477ccddc4b",
+    "md5_b64": "5LnnRm2wk4HFvvpHfM3cSw==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 870,
+     "geom_types": {
+      "MultiLineString": 870
+     },
+     "bounds_lonlat": [
+      77.474,
+      12.8393,
+      77.7776,
+      13.133
+     ],
+     "attributes": [
+      "kml_name",
+      "OBJECTID_1",
+      "OBJECTID",
+      "Bengaluru_GIS.DBO.SWD_Secondary.area",
+      "Length",
+      "Shape_Leng",
+      "Shape.STLength()"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "swd_tertiary_2022": {
+    "path": "data\\raw\\swd_tertiary_2022\\swd_tertiary_2022.kml",
+    "exists": true,
+    "bytes": 24737864,
+    "sha256": "6cc55e74b965b4543adb2489c31dbd0160e4af2161323833babfae5c9bb9e2f3",
+    "md5": "4b0d149a0bfd80e13c7f76b9fd01135a",
+    "md5_b64": "Sw0Umgv9gOE8f3a5/QETWg==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 5806,
+     "geom_types": {
+      "LineString": 5794,
+      "MultiLineString": 8,
+      "None": 4
+     },
+     "bounds_lonlat": [
+      77.4607,
+      12.8378,
+      77.7814,
+      13.1383
+     ],
+     "attributes": [
+      "kml_name",
+      "Bengaluru_GIS_DBO_SWD_Tertiary_Entity",
+      "Color",
+      "Elevation",
+      "FID_",
+      "Layer",
+      "Length",
+      "LineWt",
+      "Linetype",
+      "OBJECTID",
+      "OBJECTID_1",
+      "RefName",
+      "Shape_STLength__",
+      "Shape_Leng"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "swd_all_2022": {
+    "path": "data\\raw\\swd_all_2022\\swd_all_2022.kml",
+    "exists": true,
+    "bytes": 27465279,
+    "sha256": "f6d58112c467e6efd55a4a74e6225c68ac3d15457fa989d40faf1cc1c230865e",
+    "md5": "015bfec2f254e8a8644d10381b9923a3",
+    "md5_b64": "AVv+wvJU6KhkTRA4G5kjow==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 6839,
+     "geom_types": {
+      "LineString": 5798,
+      "MultiLineString": 1041
+     },
+     "bounds_lonlat": [
+      77.4607,
+      12.8378,
+      77.7814,
+      13.1421
+     ],
+     "attributes": [
+      "kml_name",
+      "tessellate",
+      "extrude",
+      "visibility",
+      "OBJECTID_1",
+      "OBJECTID",
+      "Length",
+      "SHAPE_Leng",
+      "Shape.STLength()",
+      "Type",
+      "path",
+      "Bengaluru_GIS.DBO.SWD_Secondary.area",
+      "Bengaluru_GIS_DBO_SWD_Tertiary_Entity",
+      "Color",
+      "Elevation",
+      "FID_",
+      "Layer",
+      "LineWt",
+      "Linetype",
+      "RefName",
+      "Shape_STLength__"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "dem_cop30_n12e077": {
+    "path": "data\\raw\\dem_cop30_n12e077\\Copernicus_DSM_COG_10_N12_00_E077_00_DEM.tif",
+    "exists": true,
+    "bytes": 41962096,
+    "sha256": "a58736cc901e3baca38721d0dd4b1048bf2a67328592e93420c7413d5012ae02",
+    "md5": "1c604ac0b0d713916605b03ac7d9dcfd",
+    "md5_b64": "HGBKwLDXE5FmBbA6x9nc/Q==",
+    "sha256_equals_lock": true,
+    "content": {
+     "driver": "GTiff",
+     "crs": "EPSG:4326",
+     "size": [
+      3600,
+      3600
+     ],
+     "res_deg": [
+      0.0002777777777777778,
+      0.0002777777777777778
+     ],
+     "bounds": [
+      76.99986,
+      12.00014,
+      77.99986,
+      13.00014
+     ],
+     "dtype": "float32",
+     "nodata": null,
+     "tags": {
+      "AREA_OR_POINT": "Point"
+     }
+    },
+    "readable": true
+   },
+   "dem_srtm_n12e077": {
+    "path": "data\\raw\\dem_srtm_n12e077\\N12E077.hgt.gz",
+    "exists": true,
+    "bytes": 11122631,
+    "sha256": "9485ba04696bbe2074a0b6cab79d0f12ecca79ad05b19d676ea35056beafd14e",
+    "md5": "5b52c71fa07452e20876763a9d8c9b87",
+    "md5_b64": "W1LHH6B0UuIIdnY6nYybhw==",
+    "sha256_equals_lock": true,
+    "content": {
+     "decompressed_bytes": 25934402,
+     "grid": [
+      3601,
+      3601
+     ],
+     "expected_SRTM1_grid": [
+      3601,
+      3601
+     ],
+     "void_cells(-32768)": 0,
+     "elev_min_max_m": [
+      233,
+      1505
+     ],
+     "crs_note": "SRTM .hgt: geographic WGS84, EGM96 heights; tile SW corner from filename"
+    },
+    "readable": true
+   },
+   "dem_cop30_n13e077": {
+    "path": "data\\raw\\dem_cop30_n13e077\\Copernicus_DSM_COG_10_N13_00_E077_00_DEM.tif",
+    "exists": true,
+    "bytes": 39995768,
+    "sha256": "3bacdbc63c1a0b95f570893578ed4a6b93c9e5ed2d6783f9caf6fc5bdd43c1f1",
+    "md5": "43352dd0417605e1a36cb51d64089770",
+    "md5_b64": "QzUt0EF2BeGjbLUdZAiXcA==",
+    "sha256_equals_lock": true,
+    "content": {
+     "driver": "GTiff",
+     "crs": "EPSG:4326",
+     "size": [
+      3600,
+      3600
+     ],
+     "res_deg": [
+      0.0002777777777777778,
+      0.0002777777777777778
+     ],
+     "bounds": [
+      76.99986,
+      13.00014,
+      77.99986,
+      14.00014
+     ],
+     "dtype": "float32",
+     "nodata": null,
+     "tags": {
+      "AREA_OR_POINT": "Point"
+     }
+    },
+    "readable": true
+   },
+   "dem_srtm_n13e077": {
+    "path": "data\\raw\\dem_srtm_n13e077\\N13E077.hgt.gz",
+    "exists": true,
+    "bytes": 8955167,
+    "sha256": "9df6fb12a3a13bee6dfa8d3666869e0e2cca3688ac9005c42654be415689363a",
+    "md5": "fa17a68360df2cc26bf4cc5e7462565b",
+    "md5_b64": "+hemg2DfLMJr9MxedGJWWw==",
+    "sha256_equals_lock": true,
+    "content": {
+     "decompressed_bytes": 25934402,
+     "grid": [
+      3601,
+      3601
+     ],
+     "expected_SRTM1_grid": [
+      3601,
+      3601
+     ],
+     "void_cells(-32768)": 0,
+     "elev_min_max_m": [
+      579,
+      1474
+     ],
+     "crs_note": "SRTM .hgt: geographic WGS84, EGM96 heights; tile SW corner from filename"
+    },
+    "readable": true
+   },
+   "flood_vulnerable_locations": {
+    "path": "data\\raw\\flood_vulnerable_locations\\flood_vulnerable_locations.kml",
+    "exists": true,
+    "bytes": 106139,
+    "sha256": "a10ee4c2b647f61b5a373f3eba2ba9dbf2f8a43cb79dd39853da9b11b8d10e5e",
+    "md5": "46246c2c02c0dc6972606456265ac3ea",
+    "md5_b64": "RiRsLALA3GlyYGRWJlrD6g==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 200,
+     "geom_types": {
+      "Point": 200
+     },
+     "bounds_lonlat": [
+      77.4781,
+      12.8675,
+      77.7468,
+      13.1103
+     ],
+     "attributes": [
+      "kml_name",
+      "OBJECTID",
+      "WARD_NAME",
+      "WARDNO",
+      "LocationName",
+      "KGISFVLID",
+      "ZONE"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "flood_prone_locations": {
+    "path": "data\\raw\\flood_prone_locations\\flood_prone_locations.kml",
+    "exists": true,
+    "bytes": 22370,
+    "sha256": "b9a2df47c412401b811dacd895cb2abc05603fbbe3a915ce97064521309c8207",
+    "md5": "68d655b1d624468172dbc58b710688bb",
+    "md5_b64": "aNZVsdYkRoFy28WLcQaIuw==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 70,
+     "geom_types": {
+      "Point": 70
+     },
+     "bounds_lonlat": [
+      77.4827,
+      12.871,
+      77.6823,
+      13.0484
+     ],
+     "attributes": [
+      "kml_name",
+      "OBJECTID"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "bbmp_low_lying_areas": {
+    "path": "data\\raw\\bbmp_low_lying_areas\\bbmp_low_lying_areas.kml",
+    "exists": true,
+    "bytes": 40900,
+    "sha256": "72e0cea9febaca1e849a14b62f52682c0112ab839675fe443650092e656feab0",
+    "md5": "8b8d6ad045decb2b3a6f9e50ac0e24d3",
+    "md5_b64": "i41q0EXeyys6b55QrA4k0w==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 129,
+     "geom_types": {
+      "Point": 129
+     },
+     "bounds_lonlat": [
+      77.482,
+      12.8578,
+      77.7632,
+      13.1073
+     ],
+     "attributes": [
+      "kml_name",
+      "OBJECTID"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "ksndmc_trg_bengaluru_urban": {
+    "path": "data\\raw\\ksndmc_trg_bengaluru_urban\\ksndmc_trg_bengaluru_urban.kml",
+    "exists": true,
+    "bytes": 145024,
+    "sha256": "ca32979be4f677e79e08850049b9d0efa23d91f1d638c3d0ed4964a262078c54",
+    "md5": "d38674a2ccf71de3bc91ad08551fd821",
+    "md5_b64": "04Z0osz3HeO8ka0IVR/YIQ==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 185,
+     "geom_types": {
+      "Point": 185
+     },
+     "bounds_lonlat": [
+      77.3464,
+      12.6707,
+      77.8226,
+      13.1991
+     ],
+     "attributes": [
+      "kml_name",
+      "OBJECTID",
+      "KGISCode",
+      "KGISTM_RainGauge_LocationID",
+      "DepartmentCode",
+      "TM_RainGauge_LocationName",
+      "KGISVillageID"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "ksndmc_aws_bengaluru_list": {
+    "path": "data\\raw\\ksndmc_aws_bengaluru_list\\ksndmc_aws_bengaluru_list.csv",
+    "exists": true,
+    "bytes": 13661,
+    "sha256": "f62be0a4dda534e21a76e158329b073ccaf996ef1247fce07e701029bd47e5f7",
+    "md5": "1f356412a6ad350e48145cf562a45472",
+    "md5_b64": "HzVkEqatNQ5IFFz1YqRUcg==",
+    "sha256_equals_lock": true,
+    "content": {
+     "lines": 199,
+     "first_lines": [
+      "List of Telemetric Rain guages installed,,,,,",
+      "SL NO,District,Taluk,Hobli,Hobli/GP/Location,Date of Commission",
+      "1,Bangalore Urban,Bangalore East,Bidarahalli,Kadugodi,26-07-2013"
+     ],
+     "last_line": "197,Bangalore Rural,Nelamangala,Thyamagondlu,Thyamagondlu,24-12-2013"
+    },
+    "readable": true
+   },
+   "bbmp_zones_2022": {
+    "path": "data\\raw\\bbmp_zones_2022\\bbmp_zones_2022.kml",
+    "exists": true,
+    "bytes": 351558,
+    "sha256": "a4cb73bd5785b8c7bbe38c3b506934d0a76038976e244d369e4bb06424c7be21",
+    "md5": "22dabd68408e18c21b24454b84ff1d8b",
+    "md5_b64": "Itq9aECOGMIbJEVLhP8diw==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 8,
+     "geom_types": {
+      "Polygon": 5,
+      "MultiPolygon": 3
+     },
+     "bounds_lonlat": [
+      77.4601,
+      12.8336,
+      77.7844,
+      13.1427
+     ],
+     "attributes": [
+      "kml_name",
+      "FID",
+      "Zone"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "bbmp_wards_2022": {
+    "path": "data\\raw\\bbmp_wards_2022\\bbmp_wards_2022.kml",
+    "exists": true,
+    "bytes": 2093582,
+    "sha256": "8ee0268d9956a61a671c732e670649386cf09b6ddd1fee74526768d7cbfc6971",
+    "md5": "e7c0acb19841783c7733a9afe39f2e2c",
+    "md5_b64": "58CssZhBeDx3M6mv458uLA==",
+    "sha256_equals_lock": true,
+    "content": {
+     "placemarks": 243,
+     "geom_types": {
+      "Polygon": 242,
+      "MultiPolygon": 1
+     },
+     "bounds_lonlat": [
+      77.4599,
+      12.8335,
+      77.7844,
+      13.1426
+     ],
+     "attributes": [
+      "kml_name",
+      "TownCode",
+      "WardCode",
+      "WardID",
+      "WardName",
+      "WardNo",
+      "LGD_WardCode",
+      "OBJECTID",
+      "fid"
+     ],
+     "kml_namespace_ok": true,
+     "crs_note": "KML spec: WGS84 lon/lat (EPSG:4326); no CRS override in file"
+    },
+    "readable": true
+   },
+   "osm_waterways_snapshot": {
+    "path": "data\\raw\\osm_waterways_snapshot\\osm_waterways.json",
+    "exists": true,
+    "bytes": 2277299,
+    "sha256": "521784f992dd37c236acc94874ede3331b8bfed2416ad587ca04ba1cc124994e",
+    "md5": "dee4286f383506a32c5e61393e601560",
+    "md5_b64": "3uQobzg1BqMsXmE5PmAVYA==",
+    "sha256_equals_lock": true,
+    "content": {
+     "generator": "Overpass API 0.7.62.11 87bfad18",
+     "osm_base": "2026-11-11T14:41:51Z",
+     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+     "elements": 2838,
+     "waterway_counts": {
+      "drain": 2455,
+      "river": 33,
+      "stream": 249,
+      "ditch": 101
+     },
+     "sample_way_ids": [
+      27931726,
+      677326107,
+      1118946159,
+      1263805818,
+      1410052068
+     ]
+    },
+    "readable": true
+   },
+   "imd_bengaluru_monthly_rain": {
+    "path": "data\\raw\\imd_bengaluru_monthly_rain\\imd_bengaluru_monthly_rain.csv",
+    "exists": true,
+    "bytes": 9155,
+    "sha256": "dab8758dc9df613c1c89597fef2e735a19edc65c334881ecdfb30de82cdbb0cd",
+    "md5": "24d941c39c40be287a70fdbfd63ce4e9",
+    "md5_b64": "JNlBw5xAvih6cP2/1jzk6Q==",
+    "sha256_equals_lock": true,
+    "content": {
+     "lines": 128,
+     "first_lines": [
+      "Year,Jan,Feb,Mar,Apr,May,June,July,Aug,Sept,Oct,Nov,Dec,Total,El NiNo (Y/N),La Nina (Y/N)",
+      "1901,0,78.9,0,24.3,146,47.7,71.6,71.6,318.5,120.3,37.3,23.1,939.3,Y,N",
+      "1902,0.7,0,17,58.1,197.8,62.2,32,79.5,213.6,219.9,11.1,25.4,917.3,N,N"
+     ],
+     "last_line": "LPA (1981-2010),1.9,5.2,18,55.7,112.6,104.3,116.2,149.4,213.8,166.7,48.5,16.8,986.1,,"
+    },
+    "readable": true
+   },
+   "data/curated/news_flood_reports.yaml": {
+    "exists": true,
+    "bytes": 10826,
+    "sha256": "e2a573cc30c17617a093d0eb175fd483a31d9c15743a8d2ed15d09973bd8da41"
+   },
+   "data/interim/geocode_cache.json": {
+    "exists": true,
+    "bytes": 8857,
+    "sha256": "9603256c97c3367213831f3f77f30052970386b1d2417e811a5b7dbe236a4791"
+   },
+   "data/interim/sentinel1_availability.csv": {
+    "exists": true,
+    "bytes": 1031,
+    "sha256": "abe945676a115c1c45b123067cbbce98d72e9d7e7b712e460fa154574a66c927"
+   }
+  }
+ },
+ "remote_checks": {
+  "url_checks": [
+   {
+    "url": "https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/114758e9-c356-46e0-afdb-e1d52f972863/download/03eea514-d4bf-4cd9-8c7b-f904b1ea83f2.kml",
+    "checked_utc": "2026-11-12T10:14:37+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/114758e9-c356-46e0-afdb-e1d52f972863/download/03eea514-d4bf-4cd9-8c7b-f904b1ea83f2.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "swd_primary_2022",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps",
+    "checked_utc": "2026-11-12T10:14:38+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "swd_primary_2022",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/4b26cd1b-7956-418d-92e4-35275caf547a/download/7033efa5-2382-4e4a-8884-5715698eac71.kml",
+    "checked_utc": "2026-11-12T10:14:38+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/4b26cd1b-7956-418d-92e4-35275caf547a/download/7033efa5-2382-4e4a-8884-5715698eac71.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "swd_secondary_2022",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps",
+    "checked_utc": "2026-11-12T10:15:27+00:00",
+    "status": null,
+    "error": "ReadTimeout: HTTPSConnectionPool(host='data.opencity.in', port=443): Read timed out. (read timeout=45)",
+    "source_id": "swd_secondary_2022",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/aa20362c-9769-46dc-9a88-c100504f6d4e/download/79494624-2682-4f31-a0e5-2fa26b867304.kml",
+    "checked_utc": "2026-11-12T10:17:05+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/aa20362c-9769-46dc-9a88-c100504f6d4e/download/79494624-2682-4f31-a0e5-2fa26b867304.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "swd_tertiary_2022",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps",
+    "checked_utc": "2026-11-12T10:17:53+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "swd_tertiary_2022",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/801779e6-ed81-457d-bd2a-7e3cc95ad1ee/download/e42be0cb-1bf4-4a7b-9c78-0c0dbdae3237.kml",
+    "checked_utc": "2026-11-12T10:17:54+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/fc97e05c-c54b-44e9-8d98-7663ee887922/resource/801779e6-ed81-457d-bd2a-7e3cc95ad1ee/download/e42be0cb-1bf4-4a7b-9c78-0c0dbdae3237.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "swd_all_2022",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps",
+    "checked_utc": "2026-11-12T10:17:55+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/bengaluru-stormwater-drains-maps",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "swd_all_2022",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N12_00_E077_00_DEM/Copernicus_DSM_COG_10_N12_00_E077_00_DEM.tif",
+    "checked_utc": "2026-11-12T10:17:55+00:00",
+    "status": 200,
+    "content_type": "image/tiff",
+    "content_length": "41962096",
+    "final_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N12_00_E077_00_DEM/Copernicus_DSM_COG_10_N12_00_E077_00_DEM.tif",
+    "first_bytes": "II*\u0000\u00c0\u0000\u0000\u0000GDAL_STRUCTURAL_METADATA_SIZE=000140 bytes\nLAYOUT=IFDS_BEFORE_DATA\nBLOCK",
+    "source_id": "dem_cop30_n12e077",
+    "kind": "url"
+   },
+   {
+    "url": "https://registry.opendata.aws/copernicus-dem/",
+    "checked_utc": "2026-11-12T10:17:56+00:00",
+    "status": 200,
+    "content_type": "text/html",
+    "content_length": null,
+    "final_url": "https://registry.opendata.aws/copernicus-dem/",
+    "first_bytes": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta h",
+    "source_id": "dem_cop30_n12e077",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://s3.amazonaws.com/elevation-tiles-prod/skadi/N12/N12E077.hgt.gz",
+    "checked_utc": "2026-11-12T10:17:57+00:00",
+    "status": 200,
+    "content_type": "application/x-gzip",
+    "content_length": "11122631",
+    "final_url": "https://s3.amazonaws.com/elevation-tiles-prod/skadi/N12/N12E077.hgt.gz",
+    "first_bytes": "\u001f\u008b\b\b\u00d2\u00dd\u001fW\u0002\u00ffN12E077.hgt\u0000t\u00bd\u0087wUW\u0096\u00eek\u00b3\u009d]\u00b6\u00cb\u00c6&\u0083\t6\u0006\u001b\f\u00c6\u0018\u0007\u008c\u00c99\u0007\u0091$\u0084\u0000I\b!!\u0094#\n(\u0007\u0090\u00109\u0083\u008dS\u00d9\u0015\u00ba\u00aa\u00bb\u00ba\u00ba\u00bb:\u00dc",
+    "source_id": "dem_srtm_n12e077",
+    "kind": "url"
+   },
+   {
+    "url": "https://registry.opendata.aws/terrain-tiles/",
+    "checked_utc": "2026-11-12T10:17:58+00:00",
+    "status": 200,
+    "content_type": "text/html",
+    "content_length": null,
+    "final_url": "https://registry.opendata.aws/terrain-tiles/",
+    "first_bytes": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta h",
+    "source_id": "dem_srtm_n12e077",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N13_00_E077_00_DEM/Copernicus_DSM_COG_10_N13_00_E077_00_DEM.tif",
+    "checked_utc": "2026-11-12T10:17:58+00:00",
+    "status": 200,
+    "content_type": "image/tiff",
+    "content_length": "39995768",
+    "final_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N13_00_E077_00_DEM/Copernicus_DSM_COG_10_N13_00_E077_00_DEM.tif",
+    "first_bytes": "II*\u0000\u00c0\u0000\u0000\u0000GDAL_STRUCTURAL_METADATA_SIZE=000140 bytes\nLAYOUT=IFDS_BEFORE_DATA\nBLOCK",
+    "source_id": "dem_cop30_n13e077",
+    "kind": "url"
+   },
+   {
+    "url": "https://registry.opendata.aws/copernicus-dem/",
+    "checked_utc": "2026-11-12T10:17:59+00:00",
+    "status": 200,
+    "content_type": "text/html",
+    "content_length": null,
+    "final_url": "https://registry.opendata.aws/copernicus-dem/",
+    "first_bytes": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta h",
+    "source_id": "dem_cop30_n13e077",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://s3.amazonaws.com/elevation-tiles-prod/skadi/N13/N13E077.hgt.gz",
+    "checked_utc": "2026-11-12T10:17:59+00:00",
+    "status": 200,
+    "content_type": "application/x-gzip",
+    "content_length": "8955167",
+    "final_url": "https://s3.amazonaws.com/elevation-tiles-prod/skadi/N13/N13E077.hgt.gz",
+    "first_bytes": "\u001f\u008b\b\b\u00bb\u0005!W\u0002\u00ffN13E077.hgt\u0000\u0084}\u0007x\u001dE\u00ba%t\u009333\u00a4\u0089L\u00ce\u00c3\u00a47/\u00bf\u00dd\u00b7\u00bbo\u0002\u0006l9\u00c9\u0096\u00ac`\u00c99\u00db\n\u0096dI\u0096\u00acd+Gg\u00cc\u000066\u00b6\u00c1\u0019p\u00c28\u00e7\u009c",
+    "source_id": "dem_srtm_n13e077",
+    "kind": "url"
+   },
+   {
+    "url": "https://registry.opendata.aws/terrain-tiles/",
+    "checked_utc": "2026-11-12T10:18:00+00:00",
+    "status": 200,
+    "content_type": "text/html",
+    "content_length": null,
+    "final_url": "https://registry.opendata.aws/terrain-tiles/",
+    "first_bytes": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta h",
+    "source_id": "dem_srtm_n13e077",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/a7d8a01f-1fbc-41e1-85f0-f15ea16b2d27/download/6b3c63b0-f461-4e9c-a2c2-006f734c5b41.kml",
+    "checked_utc": "2026-11-12T10:18:48+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/a7d8a01f-1fbc-41e1-85f0-f15ea16b2d27/download/6b3c63b0-f461-4e9c-a2c2-006f734c5b41.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "flood_vulnerable_locations",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/flooding-locations-in-bengaluru-urban",
+    "checked_utc": "2026-11-12T10:18:49+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/flooding-locations-in-bengaluru-urban",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "flood_vulnerable_locations",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/d90fe768-caba-4c6e-b6b5-a75acd5e88a9/download/00fb1229-dcfd-4f59-813f-885e0c629add.kml",
+    "checked_utc": "2026-11-12T10:18:49+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/d90fe768-caba-4c6e-b6b5-a75acd5e88a9/download/00fb1229-dcfd-4f59-813f-885e0c629add.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "flood_prone_locations",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/flooding-locations-in-bengaluru-urban",
+    "checked_utc": "2026-11-12T10:19:37+00:00",
+    "status": null,
+    "error": "ReadTimeout: HTTPSConnectionPool(host='data.opencity.in', port=443): Read timed out. (read timeout=45)",
+    "source_id": "flood_prone_locations",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/62ceac3b-f6e2-4dd1-ae9f-be80b1f2fda8/download/8e87a2fc-e014-4c6e-81f1-d5cb4db57a46.kml",
+    "checked_utc": "2026-11-12T10:20:25+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/b03218ea-4b7c-4fa9-ab67-b9054d7ecc4c/resource/62ceac3b-f6e2-4dd1-ae9f-be80b1f2fda8/download/8e87a2fc-e014-4c6e-81f1-d5cb4db57a46.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "bbmp_low_lying_areas",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/flooding-locations-in-bengaluru-urban",
+    "checked_utc": "2026-11-12T10:21:16+00:00",
+    "status": null,
+    "error": "ReadTimeout: HTTPSConnectionPool(host='data.opencity.in', port=443): Read timed out. (read timeout=45)",
+    "source_id": "bbmp_low_lying_areas",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/2b1fe5d6-933b-43a7-a0bd-8b2e7e624c82/resource/525d8f3c-67a5-4a00-a072-65b96635cb89/download/c5ca0f85-617e-47f4-925f-d14cb01ed242.kml",
+    "checked_utc": "2026-11-12T10:22:04+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/2b1fe5d6-933b-43a7-a0bd-8b2e7e624c82/resource/525d8f3c-67a5-4a00-a072-65b96635cb89/download/c5ca0f85-617e-47f4-925f-d14cb01ed242.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "ksndmc_trg_bengaluru_urban",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/list-of-automated-weater-stations-aws-in-bengaluru-urban-rural-districts",
+    "checked_utc": "2026-11-12T10:22:53+00:00",
+    "status": null,
+    "error": "ReadTimeout: HTTPSConnectionPool(host='data.opencity.in', port=443): Read timed out. (read timeout=45)",
+    "source_id": "ksndmc_trg_bengaluru_urban",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/2b1fe5d6-933b-43a7-a0bd-8b2e7e624c82/resource/f7df68b1-2621-4786-8e3b-bfe81efa03ab/download/f782dd0d-7e10-4c34-ab8e-a1addbd22321.csv",
+    "checked_utc": "2026-11-12T10:24:29+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/2b1fe5d6-933b-43a7-a0bd-8b2e7e624c82/resource/f7df68b1-2621-4786-8e3b-bfe81efa03ab/download/f782dd0d-7e10-4c34-ab8e-a1addbd22321.csv",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "ksndmc_aws_bengaluru_list",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/list-of-automated-weater-stations-aws-in-bengaluru-urban-rural-districts",
+    "checked_utc": "2026-11-12T10:24:29+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/list-of-automated-weater-stations-aws-in-bengaluru-urban-rural-districts",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "ksndmc_aws_bengaluru_list",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/4723f667-b02b-45e5-a8fc-2bc6ee7bd8b9/download/41480104-eb34-44d3-936d-47b9a2ff4042.kml",
+    "checked_utc": "2026-11-12T10:24:30+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/4723f667-b02b-45e5-a8fc-2bc6ee7bd8b9/download/41480104-eb34-44d3-936d-47b9a2ff4042.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "bbmp_zones_2022",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/bbmp-ward-information",
+    "checked_utc": "2026-11-12T10:25:18+00:00",
+    "status": null,
+    "error": "ReadTimeout: HTTPSConnectionPool(host='data.opencity.in', port=443): Read timed out. (read timeout=45)",
+    "source_id": "bbmp_zones_2022",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/9423dbca-db2b-47df-823e-8546f4fb8f2a/download/53418b48-c08d-43bd-be0e-31b46cd0f798.kml",
+    "checked_utc": "2026-11-12T10:26:06+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/9423dbca-db2b-47df-823e-8546f4fb8f2a/download/53418b48-c08d-43bd-be0e-31b46cd0f798.kml",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "bbmp_wards_2022",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/bbmp-ward-information",
+    "checked_utc": "2026-11-12T10:26:54+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/bbmp-ward-information",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "bbmp_wards_2022",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A300%5D%3Bway%5B%22waterway%22~%22%5E%28drain%7Ccanal%7Cstream%7Criver%7Cditch%29%24%22%5D%2812.83%2C77.46%2C13.15%2C77.79%29%3Bout%20geom%3B",
+    "checked_utc": "2026-11-12T10:26:55+00:00",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "final_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A300%5D%3Bway%5B%22waterway%22~%22%5E%28drain%7Ccanal%7Cstream%7Criver%7Cditch%29%24%22%5D%2812.83%2C77.46%2C13.15%2C77.79%29%3Bout%20geom%3B",
+    "first_bytes": "{\n  \"version\": 0.6,\n  \"generator\": \"Overpass API 0.7.62.11 87bfad18\",\n  \"osm3s\":",
+    "source_id": "osm_waterways_snapshot",
+    "kind": "url"
+   },
+   {
+    "url": "https://wiki.openstreetmap.org/wiki/Key:waterway",
+    "checked_utc": "2026-11-12T10:27:37+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "content_length": "22415",
+    "final_url": "https://wiki.openstreetmap.org/wiki/Key:waterway",
+    "first_bytes": "<!DOCTYPE html>\n<html class=\"client-nojs skin-theme-clientpref-thumb-standard\" l",
+    "source_id": "osm_waterways_snapshot",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/a7385a69-21c9-4d49-b066-a96dd86a24f6/resource/580edb55-4384-46c6-aeb8-2c21f3425d72/download/580edb55-4384-46c6-aeb8-2c21f3425d72.csv",
+    "checked_utc": "2026-11-12T10:28:26+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/a7385a69-21c9-4d49-b066-a96dd86a24f6/resource/580edb55-4384-46c6-aeb8-2c21f3425d72/download/580edb55-4384-46c6-aeb8-2c21f3425d72.csv",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "imd_bengaluru_monthly_rain",
+    "kind": "url"
+   },
+   {
+    "url": "https://data.opencity.in/dataset/bengaluru-rainfall",
+    "checked_utc": "2026-11-12T10:29:15+00:00",
+    "status": 502,
+    "content_type": "text/html",
+    "content_length": "166",
+    "final_url": "https://data.opencity.in/dataset/bengaluru-rainfall",
+    "first_bytes": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad",
+    "source_id": "imd_bengaluru_monthly_rain",
+    "kind": "dataset_page"
+   },
+   {
+    "url": "https://data.opencity.in",
+    "checked_utc": "2026-11-12T10:30:03+00:00",
+    "status": null,
+    "error": "ReadTimeout: HTTPSConnectionPool(host='data.opencity.in', port=443): Read timed out. (read timeout=45)",
+    "source_id": "(site)",
+    "kind": "site"
+   },
+   {
+    "url": "https://olddata.opencity.in",
+    "checked_utc": "2026-11-12T10:31:15+00:00",
+    "status": null,
+    "error": "ConnectTimeout: HTTPSConnectionPool(host='olddata.opencity.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='olddata.openci",
+    "source_id": "(site)",
+    "kind": "site"
+   },
+   {
+    "url": "https://data.opencity.in/api/3/action/status_show",
+    "checked_utc": "2026-11-12T10:32:27+00:00",
+    "status": null,
+    "error": "ReadTimeout: HTTPSConnectionPool(host='data.opencity.in', port=443): Read timed out. (read timeout=45)",
+    "source_id": "(site)",
+    "kind": "site"
+   }
+  ],
+  "independent": {
+   "dem_cop30_n12e077": {
+    "aws_head": {
+     "checked_utc": "2026-11-12T10:33:15+00:00",
+     "status": 200,
+     "etag": "1c604ac0b0d713916605b03ac7d9dcfd",
+     "content_length": "41962096",
+     "last_modified": "Mon, 09 May 2022 14:04:30 GMT",
+     "etag_is_md5_form": true,
+     "etag_equals_local_md5": true,
+     "length_equals_local": true
+    },
+    "planetary_computer": {
+     "checked_utc": "2026-11-12T10:33:19+00:00",
+     "stac_item": "Copernicus_DSM_COG_10_N12_00_E077_00_DEM",
+     "asset_href": "https://elevationeuwest.blob.core.windows.net/copernicus-dem/COP30_hh/Copernicus_DSM_COG_10_N12_00_E077_00_DEM.tif",
+     "stac_properties": {
+      "datetime": "2021-04-22T00:00:00Z",
+      "platform": "TanDEM-X",
+      "gsd": 30,
+      "proj:epsg": 4326
+     },
+     "status": 200,
+     "content_md5_b64": null,
+     "content_length": "41961736",
+     "etag": "\"0x8D975BCC7B55A7F\"",
+     "md5_equals_local": false,
+     "length_equals_local": false
+    }
+   },
+   "dem_srtm_n12e077": {
+    "aws_head": {
+     "checked_utc": "2026-11-12T10:33:16+00:00",
+     "status": 200,
+     "etag": "aa5a55bec32991bfd7342680776edff0-2",
+     "content_length": "11122631",
+     "last_modified": "Tue, 26 Apr 2016 21:29:59 GMT",
+     "etag_is_md5_form": false,
+     "etag_equals_local_md5": false,
+     "length_equals_local": true
+    }
+   },
+   "dem_cop30_n13e077": {
+    "aws_head": {
+     "checked_utc": "2026-11-12T10:33:17+00:00",
+     "status": 200,
+     "etag": "43352dd0417605e1a36cb51d64089770",
+     "content_length": "39995768",
+     "last_modified": "Mon, 09 May 2022 14:04:54 GMT",
+     "etag_is_md5_form": true,
+     "etag_equals_local_md5": true,
+     "length_equals_local": true
+    },
+    "planetary_computer": {
+     "checked_utc": "2026-11-12T10:33:21+00:00",
+     "stac_item": "Copernicus_DSM_COG_10_N13_00_E077_00_DEM",
+     "asset_href": "https://elevationeuwest.blob.core.windows.net/copernicus-dem/COP30_hh/Copernicus_DSM_COG_10_N13_00_E077_00_DEM.tif",
+     "stac_properties": {
+      "datetime": "2021-04-22T00:00:00Z",
+      "platform": "TanDEM-X",
+      "gsd": 30,
+      "proj:epsg": 4326
+     },
+     "status": 200,
+     "content_md5_b64": null,
+     "content_length": "39995408",
+     "etag": "\"0x8D975BC636A072B\"",
+     "md5_equals_local": false,
+     "length_equals_local": false
+    }
+   },
+   "dem_srtm_n13e077": {
+    "aws_head": {
+     "checked_utc": "2026-11-12T10:33:18+00:00",
+     "status": 200,
+     "etag": "b0ce1ee546cb089b28006022127a1aa8-2",
+     "content_length": "8955167",
+     "last_modified": "Wed, 27 Apr 2016 18:32:28 GMT",
+     "etag_is_md5_form": false,
+     "etag_equals_local_md5": false,
+     "length_equals_local": true
+    }
+   }
+  }
+ },
+ "derived_checks": {
+  "sentinel1": [
+   {
+    "granule": "S1A_IW_GRDH_1SDV_20170814T003947_20170814T004012_017912_01E0AC_04BC",
+    "stored_start_utc": "2017-08-14T00:39:47+00:00",
+    "checked_utc": "2026-11-12T10:25:10+00:00",
+    "asf_found": true,
+    "asf_start": "2017-08-14T00:39:47Z",
+    "cdse_found": true,
+    "cdse_name": "S1A_IW_GRDH_1SDV_20170814T003947_20170814T004012_017912_01E0AC_04BC.SAFE",
+    "cdse_start": "2017-08-14T00:39:47.818432Z"
+   },
+   {
+    "granule": "S1A_IW_GRDH_1SDV_20220905T004028_20220905T004053_044862_055BB0_85F8",
+    "stored_start_utc": "2022-09-05T00:40:28+00:00",
+    "checked_utc": "2026-11-12T10:25:28+00:00",
+    "asf_found": true,
+    "asf_start": "2022-09-05T00:40:28Z",
+    "cdse_found": true,
+    "cdse_name": "S1A_IW_GRDH_1SDV_20220905T004028_20220905T004053_044862_055BB0_85F8.SAFE",
+    "cdse_start": "2022-09-05T00:40:28.364000Z"
+   },
+   {
+    "granule": "S1A_IW_GRDH_1SDV_20241024T004029_20241024T004054_056237_06E2A7_8127",
+    "stored_start_utc": "2024-10-24T00:40:29+00:00",
+    "checked_utc": "2026-11-12T10:25:38+00:00",
+    "asf_found": true,
+    "asf_start": "2024-10-24T00:40:29Z",
+    "cdse_found": true,
+    "cdse_name": "S1A_IW_GRDH_1SDV_20241024T004029_20241024T004054_056237_06E2A7_8127.SAFE",
+    "cdse_start": "2024-10-24T00:40:29.345433Z"
+   },
+   {
+    "check": "CDSE: any S1 product over BBMP bbox 2025-05-17T12:30Z..2025-05-21T12:30Z",
+    "checked_utc": "2026-11-12T10:25:55+00:00",
+    "n_products": 0,
+    "names": []
+   }
+  ],
+  "geocodes": [
+   {
+    "query": "Basava Samithi Layout, Bengaluru",
+    "cached": null
+   },
+   {
+    "query": "Bhadrappa Layout, Bengaluru",
+    "cached_osm": "node/2450172694",
+    "now_osm": "node/11229706417",
+    "same": false
+   },
+   {
+    "query": "Byrasandra, Bengaluru",
+    "cached_osm": "relation/19884598",
+    "now_osm": "relation/19884598",
+    "same": true
+   },
+   {
+    "query": "Divyasree Technopolis, Bengaluru",
+    "cached": null
+   },
+   {
+    "query": "Doddakannelli, Bengaluru",
+    "cached_osm": "relation/17083906",
+    "now_osm": "relation/17083906",
+    "same": true
+   },
+   {
+    "query": "Ecospace, Bellandur",
+    "cached_osm": "node/3170452369",
+    "now_osm": "node/3170452369",
+    "same": true
+   },
+   {
+    "query": "HSR Layout, Bengaluru",
+    "cached_osm": "relation/17168010",
+    "now_osm": "relation/17168010",
+    "same": true
+   },
+   {
+    "query": "Horamavu, Bengaluru",
+    "cached_osm": "relation/19884576",
+    "now_osm": "relation/19884576",
+    "same": true
+   },
+   {
+    "query": "Indiranagar, Bengaluru",
+    "cached_osm": "node/448991617",
+    "now_osm": "node/448991617",
+    "same": true
+   },
+   {
+    "query": "Kamaraj Nagar, Bengaluru",
+    "cached_osm": "way/705023783",
+    "now_osm": "way/705023783",
+    "same": true
+   },
+   {
+    "query": "Kendriya Vihar, Yelahanka, Bengaluru",
+    "cached_osm": "way/96710695",
+    "now_osm": "way/96710695",
+    "same": true
+   },
+   {
+    "query": "Kengeri, Bengaluru",
+    "cached_osm": "node/308062102",
+    "now_osm": "node/308062102",
+    "same": true
+   },
+   {
+    "query": "Kodigehalli Gate, Bengaluru",
+    "cached_osm": "node/3739207821",
+    "now_osm": "node/11869393633",
+    "same": false
+   },
+   {
+    "query": "Kodigehalli, Bengaluru",
+    "cached_osm": "node/2890884582",
+    "now_osm": "node/2890884582",
+    "same": true
+   },
+   {
+    "query": "Koramangala, Bengaluru",
+    "cached_osm": "node/429918282",
+    "now_osm": "node/429918282",
+    "same": true
+   },
+   {
+    "query": "Kuvempu Nagar, Yelahanka, Bengaluru",
+    "cached_osm": "node/10310634652",
+    "now_osm": "node/10310634652",
+    "same": true
+   },
+   {
+    "query": "Mahadevapura, Bengaluru",
+    "cached_osm": "node/5760197764",
+    "now_osm": "node/5760197764",
+    "same": true
+   },
+   {
+    "query": "Marathahalli, Bengaluru",
+    "cached_osm": "relation/19884550",
+    "now_osm": "relation/19884550",
+    "same": true
+   },
+   {
+    "query": "Panathur, Bengaluru",
+    "cached_osm": "relation/19883259",
+    "now_osm": "relation/19883259",
+    "same": true
+   },
+   {
+    "query": "RMZ Ecospace, Bellandur, Bengaluru",
+    "cached": null
+   },
+   {
+    "query": "Rainbow Drive Layout, Bengaluru",
+    "cached_osm": "way/101573097",
+    "now_osm": "way/101573097",
+    "same": true
+   },
+   {
+    "query": "Rainbow Drive, Sarjapur Road, Bengaluru",
+    "cached": null
+   },
+   {
+    "query": "S T Bed Layout, Koramangala, Bengaluru",
+    "cached": null
+   },
+   {
+    "query": "ST Bed Layout, Bengaluru",
+    "cached_osm": "node/1278162259",
+    "now_osm": "node/1278162259",
+    "same": true
+   },
+   {
+    "query": "Sai Layout, Horamavu, Bengaluru",
+    "cached": null
+   },
+   {
+    "query": "Sarjapur Road, Bellandur, Bengaluru",
+    "cached": null
+   },
+   {
+    "query": "Silk Board Junction, Bengaluru",
+    "cached_osm": "node/13955791826",
+    "now_osm": "node/13955791826",
+    "same": true
+   },
+   {
+    "query": "Tata Nagar, Kodigehalli, Bengaluru",
+    "cached": null
+   },
+   {
+    "query": "Tatanagar, Bengaluru",
+    "cached_osm": "node/2112118396",
+    "now_osm": "node/2112118396",
+    "same": true
+   },
+   {
+    "query": "Varthur, Bengaluru",
+    "cached_osm": "relation/19883430",
+    "now_osm": "relation/19883430",
+    "same": true
+   },
+   {
+    "query": "Vidyaranyapura, Bengaluru",
+    "cached_osm": "node/308715244",
+    "now_osm": "node/308715244",
+    "same": true
+   }
+  ],
+  "articles": {
+   "pages": {
+    "https://citizenmatters.in/august-2017-rain-bangalore-floods/": {
+     "checked_utc": "2026-11-12T10:26:43+00:00",
+     "status": 200
+    },
+    "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall": {
+     "checked_utc": "2026-11-12T10:26:44+00:00",
+     "status": 200
+    },
+    "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535": {
+     "checked_utc": "2026-11-12T10:26:56+00:00",
+     "status": 200
+    },
+    "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions": {
+     "checked_utc": "2026-11-12T10:26:56+00:00",
+     "status": 200
+    },
+    "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month": {
+     "checked_utc": "2026-11-12T10:26:57+00:00",
+     "status": 200
+    }
+   },
+   "reports": [
+    {
+     "event_ref": "20170815",
+     "place": "S.T. Bed Layout, Koramangala",
+     "url": "https://citizenmatters.in/august-2017-rain-bangalore-floods/",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": 0.3
+    },
+    {
+     "event_ref": "20220905",
+     "place": "Marathahalli",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "Sarjapur road",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "Silk Board",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "HSR Layout",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "Varthur",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "Eco Space, Bellandur",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "Balagere Panathur",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "Indiranagar",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "DivyaSree Technopolis",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20220905",
+     "place": "Doddakanneli",
+     "url": "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20241021",
+     "place": "Kendriya Vihar, Yelahanka",
+     "url": "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month",
+     "http": 200,
+     "exact_phrase_found": false,
+     "all_key_tokens_found": true,
+     "depth_m_reported": 1.83
+    },
+    {
+     "event_ref": "20241021",
+     "place": "Vidyaranyapura",
+     "url": "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": 1.22
+    },
+    {
+     "event_ref": "20241021",
+     "place": "Kuvempu Nagar",
+     "url": "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20241021",
+     "place": "Tatanagar",
+     "url": "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20241021",
+     "place": "Bhadrappa Layout",
+     "url": "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20241021",
+     "place": "Kodigehalli",
+     "url": "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20241021",
+     "place": "Basava Samithi Layout",
+     "url": "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Sri Sai Layout in Horamavu",
+     "url": "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Rainbow Drive Layout",
+     "url": "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Koramangala",
+     "url": "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Indiranagar",
+     "url": "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Silk Board",
+     "url": "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Kengeri",
+     "url": "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Byrasandra layout",
+     "url": "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Kamaraj Nagar",
+     "url": "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    },
+    {
+     "event_ref": "20250518",
+     "place": "Mahadevapura",
+     "url": "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall",
+     "http": 200,
+     "exact_phrase_found": true,
+     "all_key_tokens_found": true,
+     "depth_m_reported": null
+    }
+   ]
+  },
+  "osm_sample": [
+   {
+    "way": 27931726,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 453993419,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 677326106,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 800107898,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 1117538127,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 1220199523,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 1263380571,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 1316321294,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 1410052047,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   },
+   {
+    "way": 1499632466,
+    "http": 200,
+    "snapshot_waterway": "drain",
+    "live_waterway": "drain"
+   }
+  ]
+ },
+ "extra": {
+  "planetary_computer_pixel_compare_aoi_77.44_12.81_77.81_13.17": {
+   "N12": "identical (684x1332 px, max abs diff 0.0)",
+   "N13": "identical (612x1332 px, max abs diff 0.0)"
+  },
+  "s3_multipart_etag_reconstruction": {
+   "N12E077.hgt.gz": "match with 8 MiB parts",
+   "N13E077.hgt.gz": "match with 8 MiB parts"
+  },
+  "imd_csv_values": {
+   "2017_total_mm": 1696.0,
+   "2022_total_mm": 1957.7
+  }
+ }
+}

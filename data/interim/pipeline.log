@@ -1,0 +1,23 @@
+2026-11-12 14:15:24,252 INFO floodtwin.geo.pipeline: audited primary: 163 features
+2026-11-12 14:15:24,457 INFO floodtwin.geo.pipeline: audited secondary: 870 features
+2026-11-12 14:15:32,080 INFO floodtwin.geo.pipeline: audited tertiary: 5806 features
+2026-11-12 14:15:33,560 WARNING floodtwin.geo.network: swd_all_2022: OBJECTID not unique; using kml_index for ids
+2026-11-12 14:15:40,066 INFO floodtwin.geo.pipeline: audited all: 6839 features
+2026-11-12 14:16:47,023 INFO floodtwin.geo.pipeline: finished stage_terrain
+2026-11-12 14:16:47,395 WARNING floodtwin.geo.observations: 1 flood-location record(s) without usable coordinates: bbmp_low_lying_areas:82 KARAMCHAND LAYOUT NEAR KARIYANNA PALYA
+2026-11-12 14:16:48,226 INFO pyogrio._io: Created 398 records
+2026-11-12 14:16:48,278 INFO pyogrio._io: Created 185 records
+2026-11-12 14:16:48,654 INFO floodtwin.geo.pipeline: finished stage_observations
+2026-11-12 14:16:52,107 INFO pyogrio._io: Created 1,379 records
+2026-11-12 14:16:52,147 INFO pyogrio._io: Created 1,299 records
+2026-11-12 14:16:52,181 INFO pyogrio._io: Created 7 records
+2026-11-12 14:16:52,330 INFO pyogrio._io: Created 5,815 records
+2026-11-12 14:16:52,416 INFO floodtwin.geo.pipeline: finished stage_network
+2026-11-12 14:17:00,128 INFO pyogrio._io: Created 75 records
+2026-11-12 14:17:00,160 INFO floodtwin.geo.pipeline: finished stage_catchments
+2026-11-12 14:17:00,190 INFO pyogrio._io: Created 66 records
+2026-11-12 14:17:00,214 INFO pyogrio._io: Created 59 records
+2026-11-12 14:17:00,245 INFO pyogrio._io: Created 1 records
+2026-11-12 14:17:00,280 INFO pyogrio._io: Created 1 records
+2026-11-12 14:17:00,653 INFO pyogrio._io: Created 31 records
+2026-11-12 14:17:08,389 INFO floodtwin.geo.pipeline: done in 104 s; exported domlur_a25_b13

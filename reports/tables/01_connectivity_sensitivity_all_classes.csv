@@ -1,0 +1,5 @@
+snap_tol_m,input_parts,rejected_degenerate,rejected_duplicate_exact,rejected_duplicate_near,t_junction_splits,rejected_self_loop,n_nodes,n_links,n_components,largest_component_length_frac,n_dangling_nodes,n_junction_nodes
+1,6848,22,0,10,1834,1,11548,8649,2983,0.1347320321503503,8279,2401
+2,6848,22,0,10,1895,5,11475,8706,2870,0.14311053808126217,8097,2463
+5,6848,22,0,10,2069,60,11296,8825,2628,0.16388105368526965,7741,2631
+10,6848,22,0,10,2406,253,10890,8969,2207,0.18829767553234616,7088,2904

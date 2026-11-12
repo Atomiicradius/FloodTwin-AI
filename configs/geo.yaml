@@ -1,0 +1,65 @@
+# configs/geo.yaml — Role A (GIS & Data). All thresholds used by floodtwin.geo live here.
+# Every value that is a judgement call is tagged with provenance ASSUMED and a note;
+# sensitivity to the important ones is reported in reports/01_data_audit.md.
+
+crs_metric: EPSG:32643          # WGS 84 / UTM 43N (data-and-contracts.md)
+crs_web: EPSG:4326
+
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  curated: data/curated
+  reports: reports
+  figures: reports/figures
+
+drainage_sources:               # manifest ids
+  primary: swd_primary_2022
+  secondary: swd_secondary_2022
+  tertiary: swd_tertiary_2022
+  all: swd_all_2022
+
+audit:
+  snap_tolerances_m: [1, 2, 5, 10]        # tech-specs §5.1 sensitivity grid
+  near_duplicate_hausdorff_m: 5.0         # ASSUMED: two segments within 5 m everywhere = near-duplicate
+  near_duplicate_length_ratio_min: 0.8    # ASSUMED
+  spot_check_sample_n: 30                 # tech-specs §5.1 (>= 30 segments)
+  spot_check_seed: 20261111
+
+network:
+  hierarchies_for_model: [primary, secondary]   # ASSUMED: tertiary lines are CAD/toposheet "Line_Water" features (see audit) and are kept for evidence only
+  snap_tolerance_m: 5.0           # ASSUMED; chosen from audit sensitivity (components plateau); see report
+  min_segment_length_m: 1.0       # shorter parts are rejected (reason ZERO_LENGTH)
+  catchment_link_rule: midpoint_inside   # a link belongs to a catchment if its midpoint lies inside
+
+dem:
+  candidates:
+    cop30: [dem_cop30_n12e077, dem_cop30_n13e077]
+    srtm:  [dem_srtm_n12e077, dem_srtm_n13e077]
+  selected: cop30                 # decided in the audit (see report §DEM); DSM caveat applies
+  resolution_m: 30.0
+  aoi_buffer_m: 3000              # AOI = BBMP boundary bbox + buffer, so basins crossing the boundary are complete
+  resampling: bilinear
+
+terrain:
+  stream_threshold_km2: 0.25      # ASSUMED: terrain-derived corridor = D8 upstream area >= 0.25 km2; sensitivity: [0.1, 0.25, 1.0]
+  stream_threshold_sensitivity_km2: [0.1, 0.25, 1.0]
+  sink_depth_min_m: 0.5           # depressions shallower than this are not reported as sinks (DEM noise)
+
+catchment_search:
+  head_area_km2: [4.0, 10.0, 25.0]   # candidate basin = watershed of a cell whose D8 area first exceeds A (non-nested within one scale; scales are alternatives)
+  min_inside_bbmp_frac: 0.9
+  gauge_near_m: 2000
+  dedup_locations_m: 50           # flood location points from different lists closer than this are one location
+
+sentinel1:
+  asf_search_url: https://api.daac.asf.alaska.edu/services/search/param
+  processing_level: GRD_HD
+  window_before_h: 24
+  window_after_h: 72
+  request_timeout_s: 180
+
+observations:
+  geocoder_url: https://nominatim.openstreetmap.org/search
+  geocoder_min_interval_s: 1.1    # Nominatim usage policy: max 1 request/s
+  geocode_viewbox: [77.40, 13.20, 77.85, 12.78]   # lon_min, lat_max, lon_max, lat_min (Bengaluru)

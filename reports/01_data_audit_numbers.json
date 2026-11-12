@@ -1,0 +1,1651 @@
+{
+ "generated_utc": "2026-11-12T08:45:24+00:00",
+ "audit": {
+  "primary": {
+   "source_id": "swd_primary_2022",
+   "geometry": {
+    "n_features": 163,
+    "geometry_types": {
+     "MultiLineString": 163
+    },
+    "n_null_geometry": 0,
+    "n_parts_after_explode": 163,
+    "n_multipart_features": 0,
+    "n_empty_parts": 0,
+    "n_zero_length_parts_lt_1m": 0,
+    "n_non_simple_parts": 0,
+    "n_invalid_parts": 0,
+    "total_length_km": 328.46,
+    "length_m_quantiles": {
+     "0.0": 22.9,
+     "0.05": 84.1,
+     "0.5": 1038.5,
+     "0.95": 7042.9,
+     "1.0": 13969.5
+    },
+    "bounds_wgs84": [
+     77.4712,
+     12.8397,
+     77.7789,
+     13.1421
+    ]
+   },
+   "attributes": {
+    "kml_name": {
+     "filled_frac": 0.0,
+     "n_distinct": 0,
+     "examples": [],
+     "hydraulic_keyword_match": false
+    },
+    "OBJECTID_1": {
+     "filled_frac": 1.0,
+     "n_distinct": 163,
+     "examples": [
+      "1",
+      "2",
+      "3"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "OBJECTID": {
+     "filled_frac": 1.0,
+     "n_distinct": 163,
+     "examples": [
+      "1",
+      "2",
+      "3"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Length": {
+     "filled_frac": 1.0,
+     "n_distinct": 163,
+     "examples": [
+      "7.53637565",
+      "3.31944906",
+      "4.45517989"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "SHAPE_Leng": {
+     "filled_frac": 1.0,
+     "n_distinct": 163,
+     "examples": [
+      "7536.37574677",
+      "3319.44886013",
+      "4455.18013965"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Shape.STLength()": {
+     "filled_frac": 1.0,
+     "n_distinct": 163,
+     "examples": [
+      "7536.37574677131",
+      "3319.44886013396",
+      "4455.18013966064"
+     ],
+     "hydraulic_keyword_match": false
+    }
+   },
+   "duplicates": {
+    "n_exact_duplicates": 0,
+    "n_near_duplicates": 0,
+    "examples": []
+   },
+   "crs_source": "EPSG:4326 (KML)",
+   "crs_target": "EPSG:32643",
+   "flow_direction_attribute": "none found"
+  },
+  "secondary": {
+   "source_id": "swd_secondary_2022",
+   "geometry": {
+    "n_features": 870,
+    "geometry_types": {
+     "MultiLineString": 870
+    },
+    "n_null_geometry": 0,
+    "n_parts_after_explode": 870,
+    "n_multipart_features": 0,
+    "n_empty_parts": 0,
+    "n_zero_length_parts_lt_1m": 6,
+    "n_non_simple_parts": 0,
+    "n_invalid_parts": 0,
+    "total_length_km": 438.81,
+    "length_m_quantiles": {
+     "0.0": 0.0,
+     "0.05": 43.5,
+     "0.5": 355.6,
+     "0.95": 1537.9,
+     "1.0": 3653.9
+    },
+    "bounds_wgs84": [
+     77.474,
+     12.8393,
+     77.7776,
+     13.133
+    ]
+   },
+   "attributes": {
+    "kml_name": {
+     "filled_frac": 0.0,
+     "n_distinct": 0,
+     "examples": [],
+     "hydraulic_keyword_match": false
+    },
+    "OBJECTID_1": {
+     "filled_frac": 1.0,
+     "n_distinct": 870,
+     "examples": [
+      "1",
+      "2",
+      "3"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "OBJECTID": {
+     "filled_frac": 1.0,
+     "n_distinct": 870,
+     "examples": [
+      "1",
+      "2",
+      "3"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Bengaluru_GIS.DBO.SWD_Secondary.area": {
+     "filled_frac": 1.0,
+     "n_distinct": 2,
+     "examples": [
+      "0.01507481",
+      "0"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Length": {
+     "filled_frac": 1.0,
+     "n_distinct": 863,
+     "examples": [
+      "1.505e-05",
+      "0.42864856",
+      "0.11639769"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Shape_Leng": {
+     "filled_frac": 1.0,
+     "n_distinct": 870,
+     "examples": [
+      "0.01507481",
+      "428.64861898",
+      "116.39770165"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Shape.STLength()": {
+     "filled_frac": 1.0,
+     "n_distinct": 870,
+     "examples": [
+      "0.0150748134316813",
+      "428.648618978032",
+      "116.3977016539"
+     ],
+     "hydraulic_keyword_match": false
+    }
+   },
+   "duplicates": {
+    "n_exact_duplicates": 0,
+    "n_near_duplicates": 0,
+    "examples": []
+   },
+   "crs_source": "EPSG:4326 (KML)",
+   "crs_target": "EPSG:32643",
+   "flow_direction_attribute": "none found"
+  },
+  "tertiary": {
+   "source_id": "swd_tertiary_2022",
+   "geometry": {
+    "n_features": 5806,
+    "geometry_types": {
+     "LineString": 5794,
+     "MultiLineString": 8,
+     "None": 4
+    },
+    "n_null_geometry": 4,
+    "n_parts_after_explode": 5815,
+    "n_multipart_features": 8,
+    "n_empty_parts": 4,
+    "n_zero_length_parts_lt_1m": 12,
+    "n_non_simple_parts": 6,
+    "n_invalid_parts": 0,
+    "total_length_km": 1218.98,
+    "length_m_quantiles": {
+     "0.0": 0.0,
+     "0.05": 11.9,
+     "0.5": 142.6,
+     "0.95": 627.3,
+     "1.0": 2020.6
+    },
+    "bounds_wgs84": [
+     77.4607,
+     12.8378,
+     77.7814,
+     13.1383
+    ]
+   },
+   "attributes": {
+    "kml_name": {
+     "filled_frac": 0.0,
+     "n_distinct": 0,
+     "examples": [],
+     "hydraulic_keyword_match": false
+    },
+    "Bengaluru_GIS_DBO_SWD_Tertiary_Entity": {
+     "filled_frac": 1.0,
+     "n_distinct": 4,
+     "examples": [
+      "LWPolyline",
+      "Line",
+      "Spline"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Color": {
+     "filled_frac": 1.0,
+     "n_distinct": 1,
+     "examples": [
+      "130"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Elevation": {
+     "filled_frac": 1.0,
+     "n_distinct": 3,
+     "examples": [
+      "0",
+      "-3.20235836",
+      "-3.2097049"
+     ],
+     "hydraulic_keyword_match": true
+    },
+    "FID_": {
+     "filled_frac": 1.0,
+     "n_distinct": 1,
+     "examples": [
+      "0"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Layer": {
+     "filled_frac": 1.0,
+     "n_distinct": 1,
+     "examples": [
+      "Line_Water"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Length": {
+     "filled_frac": 1.0,
+     "n_distinct": 5806,
+     "examples": [
+      "0.05196631",
+      "0.07460671",
+      "0.11968174"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "LineWt": {
+     "filled_frac": 1.0,
+     "n_distinct": 1,
+     "examples": [
+      "25"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Linetype": {
+     "filled_frac": 1.0,
+     "n_distinct": 6,
+     "examples": [
+      "Continuous",
+      "BYBLOCK",
+      "FOOTPATH-1"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "OBJECTID": {
+     "filled_frac": 1.0,
+     "n_distinct": 5806,
+     "examples": [
+      "1",
+      "2",
+      "3"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "OBJECTID_1": {
+     "filled_frac": 1.0,
+     "n_distinct": 5806,
+     "examples": [
+      "1",
+      "2",
+      "3"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "RefName": {
+     "filled_frac": 0.0,
+     "n_distinct": 0,
+     "examples": [],
+     "hydraulic_keyword_match": false
+    },
+    "Shape_STLength__": {
+     "filled_frac": 1.0,
+     "n_distinct": 5806,
+     "examples": [
+      "51.9663117557",
+      "74.6067123933",
+      "119.681735381"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Shape_Leng": {
+     "filled_frac": 1.0,
+     "n_distinct": 5806,
+     "examples": [
+      "51.96631175",
+      "74.60671239",
+      "119.68173538"
+     ],
+     "hydraulic_keyword_match": false
+    }
+   },
+   "duplicates": {
+    "n_exact_duplicates": 0,
+    "n_near_duplicates": 10,
+    "examples": [
+     {
+      "seg_id": "T3092_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T1120_0"
+     },
+     {
+      "seg_id": "T33_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T2056_0"
+     },
+     {
+      "seg_id": "T3444_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T295_0"
+     },
+     {
+      "seg_id": "T3848_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T1349_0"
+     },
+     {
+      "seg_id": "T4141_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T294_0"
+     },
+     {
+      "seg_id": "T4753_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T257_0"
+     },
+     {
+      "seg_id": "T5556_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T1336_0"
+     },
+     {
+      "seg_id": "T712_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T1349_0"
+     },
+     {
+      "seg_id": "T943_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T5100_0"
+     },
+     {
+      "seg_id": "T997_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of T4924_0"
+     }
+    ]
+   },
+   "crs_source": "EPSG:4326 (KML)",
+   "crs_target": "EPSG:32643",
+   "flow_direction_attribute": "none found"
+  },
+  "all": {
+   "source_id": "swd_all_2022",
+   "geometry": {
+    "n_features": 6839,
+    "geometry_types": {
+     "LineString": 5798,
+     "MultiLineString": 1041
+    },
+    "n_null_geometry": 0,
+    "n_parts_after_explode": 6848,
+    "n_multipart_features": 8,
+    "n_empty_parts": 0,
+    "n_zero_length_parts_lt_1m": 18,
+    "n_non_simple_parts": 7,
+    "n_invalid_parts": 0,
+    "total_length_km": 1988.47,
+    "length_m_quantiles": {
+     "0.0": 0.0,
+     "0.05": 13.3,
+     "0.5": 160.6,
+     "0.95": 882.1,
+     "1.0": 13969.5
+    },
+    "bounds_wgs84": [
+     77.4607,
+     12.8378,
+     77.7814,
+     13.1421
+    ]
+   },
+   "attributes": {
+    "kml_name": {
+     "filled_frac": 0.0,
+     "n_distinct": 0,
+     "examples": [],
+     "hydraulic_keyword_match": false
+    },
+    "tessellate": {
+     "filled_frac": 1.0,
+     "n_distinct": 2,
+     "examples": [
+      "-1",
+      "1"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "extrude": {
+     "filled_frac": 1.0,
+     "n_distinct": 1,
+     "examples": [
+      "0"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "visibility": {
+     "filled_frac": 1.0,
+     "n_distinct": 1,
+     "examples": [
+      "-1"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "OBJECTID_1": {
+     "filled_frac": 1.0,
+     "n_distinct": 5806,
+     "examples": [
+      "1",
+      "2",
+      "3"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "OBJECTID": {
+     "filled_frac": 1.0,
+     "n_distinct": 5806,
+     "examples": [
+      "1",
+      "2",
+      "3"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Length": {
+     "filled_frac": 1.0,
+     "n_distinct": 6832,
+     "examples": [
+      "7.53637565",
+      "3.31944906",
+      "4.45517989"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "SHAPE_Leng": {
+     "filled_frac": 1.0,
+     "n_distinct": 6839,
+     "examples": [
+      "7536.37574677",
+      "3319.44886013",
+      "4455.18013965"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Shape.STLength()": {
+     "filled_frac": 0.151,
+     "n_distinct": 1033,
+     "examples": [
+      "7536.37574677131",
+      "3319.44886013396",
+      "4455.18013966064"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Type": {
+     "filled_frac": 1.0,
+     "n_distinct": 3,
+     "examples": [
+      "Primary",
+      "Secondary",
+      "Tertiary"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "path": {
+     "filled_frac": 1.0,
+     "n_distinct": 3,
+     "examples": [
+      "D:/OpenCity/Files to Upload/Uploaded Files/KSRSAC Maps/Bangalore_SWD_Primary-appended.kml|layername=swd_primary|geometrytype=LineString|uniqueGeometryType=yes",
+      "D:/OpenCity/Files to Upload/Uploaded Files/KSRSAC Maps/Bangalore_SWD_Secondary-appended.kml|layername=swd_secondary|geometrytype=LineString|uniqueGeometryType=yes",
+      "D:/OpenCity/Files to Upload/Uploaded Files/KSRSAC Maps/blr_swd_tertiary-appended.kml|layername=\n   blr_swd_tertiary.geojson\n  |geometrytype=LineString25D|uniqueGeometryType=yes"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Bengaluru_GIS.DBO.SWD_Secondary.area": {
+     "filled_frac": 0.1272,
+     "n_distinct": 2,
+     "examples": [
+      "0.01507481",
+      "0"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Bengaluru_GIS_DBO_SWD_Tertiary_Entity": {
+     "filled_frac": 0.849,
+     "n_distinct": 4,
+     "examples": [
+      "LWPolyline",
+      "Line",
+      "Spline"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Color": {
+     "filled_frac": 0.849,
+     "n_distinct": 1,
+     "examples": [
+      "130"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Elevation": {
+     "filled_frac": 0.849,
+     "n_distinct": 3,
+     "examples": [
+      "0",
+      "-3.20235836",
+      "-3.2097049"
+     ],
+     "hydraulic_keyword_match": true
+    },
+    "FID_": {
+     "filled_frac": 0.849,
+     "n_distinct": 1,
+     "examples": [
+      "0"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Layer": {
+     "filled_frac": 0.849,
+     "n_distinct": 1,
+     "examples": [
+      "Line_Water"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "LineWt": {
+     "filled_frac": 0.849,
+     "n_distinct": 1,
+     "examples": [
+      "25"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "Linetype": {
+     "filled_frac": 0.849,
+     "n_distinct": 6,
+     "examples": [
+      "Continuous",
+      "BYBLOCK",
+      "FOOTPATH-1"
+     ],
+     "hydraulic_keyword_match": false
+    },
+    "RefName": {
+     "filled_frac": 0.0,
+     "n_distinct": 0,
+     "examples": [],
+     "hydraulic_keyword_match": false
+    },
+    "Shape_STLength__": {
+     "filled_frac": 0.849,
+     "n_distinct": 5806,
+     "examples": [
+      "51.9663117557",
+      "74.6067123933",
+      "119.681735381"
+     ],
+     "hydraulic_keyword_match": false
+    }
+   },
+   "duplicates": {
+    "n_exact_duplicates": 0,
+    "n_near_duplicates": 9,
+    "examples": [
+     {
+      "seg_id": "O2381_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O1744_0"
+     },
+     {
+      "seg_id": "O3088_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O1065_0"
+     },
+     {
+      "seg_id": "O4124_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O1416_0"
+     },
+     {
+      "seg_id": "O4476_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O1327_0"
+     },
+     {
+      "seg_id": "O5173_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O1326_0"
+     },
+     {
+      "seg_id": "O5785_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O1289_0"
+     },
+     {
+      "seg_id": "O5956_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O2029_0"
+     },
+     {
+      "seg_id": "O6132_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O1975_0"
+     },
+     {
+      "seg_id": "O6588_0",
+      "reason_code": "DUPLICATE_NEAR",
+      "reason_detail": "duplicate of O2368_0"
+     }
+    ]
+   },
+   "crs_source": "EPSG:4326 (KML)",
+   "crs_target": "EPSG:32643",
+   "flow_direction_attribute": "none found",
+   "published_type_counts": {
+    "Tertiary": 5806,
+    "Secondary": 870,
+    "Primary": 163
+   }
+  },
+  "connectivity_sensitivity_primary_secondary": [
+   {
+    "snap_tol_m": 1,
+    "input_parts": 1033,
+    "rejected_degenerate": 6,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 0,
+    "t_junction_splits": 267,
+    "rejected_self_loop": 1,
+    "n_nodes": 1381,
+    "n_links": 1293,
+    "n_components": 104,
+    "largest_component_length_frac": 0.3253554021063132,
+    "n_dangling_nodes": 785,
+    "n_junction_nodes": 589
+   },
+   {
+    "snap_tol_m": 2,
+    "input_parts": 1033,
+    "rejected_degenerate": 6,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 0,
+    "t_junction_splits": 268,
+    "rejected_self_loop": 1,
+    "n_nodes": 1381,
+    "n_links": 1294,
+    "n_components": 104,
+    "largest_component_length_frac": 0.32535502053430226,
+    "n_dangling_nodes": 784,
+    "n_junction_nodes": 590
+   },
+   {
+    "snap_tol_m": 5,
+    "input_parts": 1033,
+    "rejected_degenerate": 6,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 0,
+    "t_junction_splits": 273,
+    "rejected_self_loop": 1,
+    "n_nodes": 1379,
+    "n_links": 1299,
+    "n_components": 100,
+    "largest_component_length_frac": 0.32534445236876597,
+    "n_dangling_nodes": 775,
+    "n_junction_nodes": 595
+   },
+   {
+    "snap_tol_m": 10,
+    "input_parts": 1033,
+    "rejected_degenerate": 6,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 0,
+    "t_junction_splits": 273,
+    "rejected_self_loop": 6,
+    "n_nodes": 1369,
+    "n_links": 1294,
+    "n_components": 95,
+    "largest_component_length_frac": 0.32529407706381347,
+    "n_dangling_nodes": 766,
+    "n_junction_nodes": 591
+   },
+   {
+    "snap_tol_m": 20,
+    "input_parts": 1033,
+    "rejected_degenerate": 6,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 0,
+    "t_junction_splits": 275,
+    "rejected_self_loop": 17,
+    "n_nodes": 1351,
+    "n_links": 1285,
+    "n_components": 90,
+    "largest_component_length_frac": 0.3255238386643403,
+    "n_dangling_nodes": 745,
+    "n_junction_nodes": 587
+   },
+   {
+    "snap_tol_m": 50,
+    "input_parts": 1033,
+    "rejected_degenerate": 6,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 0,
+    "t_junction_splits": 285,
+    "rejected_self_loop": 63,
+    "n_nodes": 1277,
+    "n_links": 1249,
+    "n_components": 73,
+    "largest_component_length_frac": 0.32512649056254667,
+    "n_dangling_nodes": 666,
+    "n_junction_nodes": 566
+   }
+  ],
+  "connectivity_sensitivity_all_classes": [
+   {
+    "snap_tol_m": 1,
+    "input_parts": 6848,
+    "rejected_degenerate": 22,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 10,
+    "t_junction_splits": 1834,
+    "rejected_self_loop": 1,
+    "n_nodes": 11548,
+    "n_links": 8649,
+    "n_components": 2983,
+    "largest_component_length_frac": 0.1347320321503503,
+    "n_dangling_nodes": 8279,
+    "n_junction_nodes": 2401
+   },
+   {
+    "snap_tol_m": 2,
+    "input_parts": 6848,
+    "rejected_degenerate": 22,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 10,
+    "t_junction_splits": 1895,
+    "rejected_self_loop": 5,
+    "n_nodes": 11475,
+    "n_links": 8706,
+    "n_components": 2870,
+    "largest_component_length_frac": 0.14311053808126217,
+    "n_dangling_nodes": 8097,
+    "n_junction_nodes": 2463
+   },
+   {
+    "snap_tol_m": 5,
+    "input_parts": 6848,
+    "rejected_degenerate": 22,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 10,
+    "t_junction_splits": 2069,
+    "rejected_self_loop": 60,
+    "n_nodes": 11296,
+    "n_links": 8825,
+    "n_components": 2628,
+    "largest_component_length_frac": 0.16388105368526965,
+    "n_dangling_nodes": 7741,
+    "n_junction_nodes": 2631
+   },
+   {
+    "snap_tol_m": 10,
+    "input_parts": 6848,
+    "rejected_degenerate": 22,
+    "rejected_duplicate_exact": 0,
+    "rejected_duplicate_near": 10,
+    "t_junction_splits": 2406,
+    "rejected_self_loop": 253,
+    "n_nodes": 10890,
+    "n_links": 8969,
+    "n_components": 2207,
+    "largest_component_length_frac": 0.18829767553234616,
+    "n_dangling_nodes": 7088,
+    "n_junction_nodes": 2904
+   }
+  ],
+  "dangling_gap_m_quantiles": {
+   "0.1": 36.620999847774335,
+   "0.25": 98.02320495127874,
+   "0.5": 191.03206537244031,
+   "0.75": 355.5042274912971,
+   "0.9": 510.8589312233788
+  },
+  "dangling_gap_counts": {
+   "<= 10 m": 7,
+   "<= 20 m": 30,
+   "<= 50 m": 106,
+   "<= 100 m": 185,
+   "<= 200 m": 367
+  },
+  "n_dangling": 775,
+  "overlap_frac_secondary_within_10m_of_primary": 0.011123877343426403,
+  "overlap_frac_tertiary_within_10m_of_primary_or_secondary": 0.02593174896352116,
+  "osm_ways": 2838,
+  "osm_agreement": {
+   "primary_within_15m": 0.509385807579927,
+   "primary_within_30m": 0.6724568917970702,
+   "primary_within_60m": 0.7958501387503539,
+   "secondary_within_15m": 0.2420997415148413,
+   "secondary_within_30m": 0.32565639373925764,
+   "secondary_within_60m": 0.4175021693135954,
+   "tertiary_within_15m": 0.08385565552301434,
+   "tertiary_within_30m": 0.14109929060913934,
+   "tertiary_within_60m": 0.21649417096911644
+  }
+ },
+ "terrain": {
+  "aoi": {
+   "width": 1373,
+   "height": 1341,
+   "bounds": [
+    763946.6251314153,
+    1417145.9955322135,
+    805085.5577505981,
+    1457344.6217638503
+   ]
+  },
+  "cop30": {
+   "source_crs": "EPSG:4326",
+   "source_res_deg": [
+    0.0002777777777777778,
+    0.0002777777777777778
+   ],
+   "void_cells": 0,
+   "cells": 1841193,
+   "elev_min_m": 704.0090942382812,
+   "elev_max_m": 992.1629638671875
+  },
+  "srtm": {
+   "source_crs": "EPSG:4326",
+   "source_res_deg": [
+    0.0002777777777777778,
+    0.0002777777777777778
+   ],
+   "void_cells": 0,
+   "cells": 1841193,
+   "elev_min_m": 706.0218505859375,
+   "elev_max_m": 1002.1414794921875
+  },
+  "cop_minus_srtm_inside_bbmp": {
+   "median_m": -0.9132080078125,
+   "mad_m": 1.8240966796875,
+   "p05_m": -5.16912841796875,
+   "p95_m": 3.59075927734375,
+   "n_cells": 796575,
+   "void_cells_cop": 0,
+   "void_cells_srtm": 0
+  },
+  "routing": {
+   "paths": {
+    "dem_conditioned": "C:\\5th sem\\el\\FloodTwin-AI-main\\FloodTwin-AI-main\\data\\interim\\terrain\\dem_conditioned.tif",
+    "sink_depth": "C:\\5th sem\\el\\FloodTwin-AI-main\\FloodTwin-AI-main\\data\\interim\\terrain\\sink_depth.tif",
+    "flowdir_d8": "C:\\5th sem\\el\\FloodTwin-AI-main\\FloodTwin-AI-main\\data\\interim\\terrain\\flowdir_d8.tif",
+    "acc_d8_km2": "C:\\5th sem\\el\\FloodTwin-AI-main\\FloodTwin-AI-main\\data\\interim\\terrain\\acc_d8_km2.tif",
+    "acc_dinf_km2": "C:\\5th sem\\el\\FloodTwin-AI-main\\FloodTwin-AI-main\\data\\interim\\terrain\\acc_dinf_km2.tif"
+   },
+   "cell_km2": 0.0009,
+   "sink_cells_gt_0": 194946,
+   "sink_depth_max_m": 23.87469482421875
+  },
+  "sink_cells_ge_min_inside_bbmp": 62461,
+  "sink_cells_ge_2m_inside_bbmp": 16207
+ },
+ "observations": {
+  "flood_location_records": 398,
+  "flood_location_records_rejected_no_coordinates": [
+   {
+    "loc_id": "bbmp_low_lying_areas:82",
+    "name": "KARAMCHAND LAYOUT NEAR KARIYANNA PALYA"
+   }
+  ],
+  "flood_location_records_by_source": {
+   "flood_vulnerable_locations": 200,
+   "bbmp_low_lying_areas": 128,
+   "flood_prone_locations": 70
+  },
+  "flood_location_clusters": 385,
+  "flood_location_records_inside_bbmp": 396,
+  "rain_gauges_bengaluru_urban": 185,
+  "rain_gauges_inside_bbmp": 99,
+  "event_reports": 27,
+  "event_reports_geocoded": 23,
+  "events": [
+   {
+    "event_id": "20170815_bengaluru",
+    "n_reports": 1,
+    "n_geocoded": 1
+   },
+   {
+    "event_id": "20220905_bengaluru",
+    "n_reports": 10,
+    "n_geocoded": 8
+   },
+   {
+    "event_id": "20241021_bengaluru",
+    "n_reports": 7,
+    "n_geocoded": 6
+   },
+   {
+    "event_id": "20250518_bengaluru",
+    "n_reports": 9,
+    "n_geocoded": 8
+   }
+  ],
+  "sentinel1": [
+   {
+    "event_ref": "20170815",
+    "granule": "S1A_IW_GRDH_1SDV_20170814T003947_20170814T004012_017912_01E0AC_04BC",
+    "platform": "Sentinel-1A",
+    "acq_start_utc": "2017-08-14T00:39:47+00:00",
+    "lag_h_from_nominal_start": -11.8,
+    "flight_direction": "DESCENDING",
+    "path": 165.0,
+    "frame": 548.0,
+    "beam_mode": "IW",
+    "window_start_utc": "2017-08-13T12:30:00+00:00",
+    "window_end_utc": "2017-08-17T12:30:00+00:00",
+    "timing": "PRE_EVENT",
+    "verdict": "ACQUISITION_IN_WINDOW_QUALITY_NOT_INSPECTED"
+   },
+   {
+    "event_ref": "20220905",
+    "granule": "S1A_IW_GRDH_1SDV_20220905T004028_20220905T004053_044862_055BB0_85F8",
+    "platform": "Sentinel-1A",
+    "acq_start_utc": "2022-09-05T00:40:28+00:00",
+    "lag_h_from_nominal_start": 12.2,
+    "flight_direction": "DESCENDING",
+    "path": 165.0,
+    "frame": 549.0,
+    "beam_mode": "IW",
+    "window_start_utc": "2022-09-03T12:30:00+00:00",
+    "window_end_utc": "2022-09-07T12:30:00+00:00",
+    "timing": "POST_START_WITHIN_24H",
+    "verdict": "ACQUISITION_IN_WINDOW_QUALITY_NOT_INSPECTED"
+   },
+   {
+    "event_ref": "20241021",
+    "granule": "S1A_IW_GRDH_1SDV_20241024T004029_20241024T004054_056237_06E2A7_8127",
+    "platform": "Sentinel-1A",
+    "acq_start_utc": "2024-10-24T00:40:29+00:00",
+    "lag_h_from_nominal_start": 60.2,
+    "flight_direction": "DESCENDING",
+    "path": 165.0,
+    "frame": 549.0,
+    "beam_mode": "IW",
+    "window_start_utc": "2024-10-20T12:30:00+00:00",
+    "window_end_utc": "2024-10-24T12:30:00+00:00",
+    "timing": "POST_START_AFTER_24H",
+    "verdict": "ACQUISITION_IN_WINDOW_QUALITY_NOT_INSPECTED"
+   },
+   {
+    "event_ref": "20250518",
+    "granule": NaN,
+    "platform": NaN,
+    "acq_start_utc": NaN,
+    "lag_h_from_nominal_start": NaN,
+    "flight_direction": NaN,
+    "path": NaN,
+    "frame": NaN,
+    "beam_mode": NaN,
+    "window_start_utc": "2025-05-17T12:30:00+00:00",
+    "window_end_utc": "2025-05-21T12:30:00+00:00",
+    "timing": NaN,
+    "verdict": "NO_ACQUISITION_IN_WINDOW"
+   }
+  ]
+ },
+ "network_city": {
+  "input_parts": 1033,
+  "rejected_degenerate": 6,
+  "rejected_duplicate_exact": 0,
+  "rejected_duplicate_near": 0,
+  "t_junction_splits": 273,
+  "rejected_self_loop": 1,
+  "n_nodes": 1379,
+  "n_links": 1299,
+  "n_components": 100,
+  "largest_component_length_frac": 0.32534445236876597,
+  "n_dangling_nodes": 775,
+  "n_junction_nodes": 595,
+  "direction_basis": {
+   "dem_elevation_drop": 1049,
+   "upstream_area": 225,
+   "digitising_order": 25
+  },
+  "node_types": {
+   "junction": 1139,
+   "outfall": 240
+  },
+  "status_counts": {
+   "SUPPORTED": 724,
+   "UNVERIFIED": 344,
+   "DISPUTED": 231
+  },
+  "status_counts_by_hierarchy": {
+   "primary": {
+    "DISPUTED": 45,
+    "SUPPORTED": 273,
+    "UNVERIFIED": 110
+   },
+   "secondary": {
+    "DISPUTED": 186,
+    "SUPPORTED": 451,
+    "UNVERIFIED": 234
+   }
+  },
+  "indicator_means": {
+   "terrain_alignment": 0.43272155854151223,
+   "terminal_plausibility": 0.9279128248113998,
+   "connectivity_consistency": 0.5458044649730562
+  },
+  "indicator_nan_counts": {
+   "terrain_alignment": 0,
+   "terminal_plausibility": 106,
+   "connectivity_consistency": 0
+  },
+  "terminal_links": 385,
+  "terminal_implausible": 86,
+  "sensitivity": [
+   {
+    "variant": "baseline",
+    "frac_status_changed": 0.0,
+    "n_links": 1299,
+    "n_SUPPORTED": 724,
+    "n_DISPUTED": 231,
+    "n_UNVERIFIED": 344,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "weight terrain_alignment +20%",
+    "frac_status_changed": 0.12548113933795227,
+    "n_links": 1299,
+    "n_SUPPORTED": 590,
+    "n_DISPUTED": 238,
+    "n_UNVERIFIED": 471,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "weight terrain_alignment -20%",
+    "frac_status_changed": 0.11855273287143957,
+    "n_links": 1299,
+    "n_SUPPORTED": 712,
+    "n_DISPUTED": 99,
+    "n_UNVERIFIED": 488,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "weight terminal_plausibility +20%",
+    "frac_status_changed": 0.09314857582755966,
+    "n_links": 1299,
+    "n_SUPPORTED": 740,
+    "n_DISPUTED": 130,
+    "n_UNVERIFIED": 429,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "weight terminal_plausibility -20%",
+    "frac_status_changed": 0.1578137028483449,
+    "n_links": 1299,
+    "n_SUPPORTED": 583,
+    "n_DISPUTED": 229,
+    "n_UNVERIFIED": 487,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "weight connectivity_consistency +20%",
+    "frac_status_changed": 0.06004618937644342,
+    "n_links": 1299,
+    "n_SUPPORTED": 694,
+    "n_DISPUTED": 211,
+    "n_UNVERIFIED": 394,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "weight connectivity_consistency -20%",
+    "frac_status_changed": 0.20092378752886836,
+    "n_links": 1299,
+    "n_SUPPORTED": 637,
+    "n_DISPUTED": 123,
+    "n_UNVERIFIED": 539,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "terrain_agree_min +0.1",
+    "frac_status_changed": 0.18090839107005388,
+    "n_links": 1299,
+    "n_SUPPORTED": 489,
+    "n_DISPUTED": 231,
+    "n_UNVERIFIED": 579,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "terrain_agree_min -0.1",
+    "frac_status_changed": 0.07852193995381063,
+    "n_links": 1299,
+    "n_SUPPORTED": 826,
+    "n_DISPUTED": 231,
+    "n_UNVERIFIED": 242,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "terrain_disagree_max +0.1",
+    "frac_status_changed": 0.08852963818321787,
+    "n_links": 1299,
+    "n_SUPPORTED": 724,
+    "n_DISPUTED": 346,
+    "n_UNVERIFIED": 229,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "terrain_disagree_max -0.1",
+    "frac_status_changed": 0.11778290993071594,
+    "n_links": 1299,
+    "n_SUPPORTED": 724,
+    "n_DISPUTED": 78,
+    "n_UNVERIFIED": 497,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "official map not counted as a source",
+    "frac_status_changed": 0.5573518090839107,
+    "n_links": 1299,
+    "n_SUPPORTED": 0,
+    "n_DISPUTED": 231,
+    "n_UNVERIFIED": 1068,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "terrain decisive for primary only",
+    "frac_status_changed": 0.49037721324095457,
+    "n_links": 1299,
+    "n_SUPPORTED": 273,
+    "n_DISPUTED": 45,
+    "n_UNVERIFIED": 981,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "corridor buffer 30 m",
+    "frac_status_changed": 0.053117782909930716,
+    "n_links": 1299,
+    "n_SUPPORTED": 682,
+    "n_DISPUTED": 258,
+    "n_UNVERIFIED": 359,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "corridor buffer 60 m",
+    "frac_status_changed": 0.05003849114703618,
+    "n_links": 1299,
+    "n_SUPPORTED": 761,
+    "n_DISPUTED": 201,
+    "n_UNVERIFIED": 337,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "stream threshold 0.1 km2",
+    "frac_status_changed": 0.06543494996150885,
+    "n_links": 1299,
+    "n_SUPPORTED": 761,
+    "n_DISPUTED": 171,
+    "n_UNVERIFIED": 367,
+    "n_VERIFIED": 0
+   },
+   {
+    "variant": "stream threshold 1.0 km2",
+    "frac_status_changed": 0.10469591993841416,
+    "n_links": 1299,
+    "n_SUPPORTED": 684,
+    "n_DISPUTED": 342,
+    "n_UNVERIFIED": 273,
+    "n_VERIFIED": 0
+   }
+  ]
+ },
+ "catchments": {
+  "n_head_cells_by_scale": {
+   "4.0": 125,
+   "10.0": 46,
+   "25.0": 24
+  },
+  "n_candidates_inside_bbmp": 75,
+  "n_candidates_by_scale": {
+   "4.0": 48,
+   "10.0": 18,
+   "25.0": 9
+  },
+  "area_km2_range": [
+   4.0005,
+   31.5936
+  ],
+  "top10": [
+   {
+    "cand_id": "domlur_a25_b13",
+    "area_km2": 27.4887,
+    "drain_len_km": 30.33775436063917,
+    "drain_density_km_per_km2": 1.1036445652445976,
+    "tertiary_len_km": 19.190718904298837,
+    "n_links": 59,
+    "n_nodes": 66,
+    "n_components": 7,
+    "lcc_frac": 0.8733185914598396,
+    "gauges_inside": 4,
+    "gauges_within_2km": 13,
+    "gauges_within_5km": 38,
+    "gauge_names_within_2km": "East Banaswadi; East Dommalur; East Manorayanapalya; Rajamahal Guttahalli; Sampangiramanagar; Sampangiramanagar-2; Vannarpet; Pulakeshinagar; Hal Airport; Benniganahalli; Hoysala Nagar; Kushalnagar; Kammanahalli",
+    "flood_location_records": 25,
+    "flood_location_clusters": 25,
+    "event_obs_inside": 2,
+    "events_with_obs": 2,
+    "event_ids_inside": "20220905_bengaluru; 20250518_bengaluru",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.78204345703125,
+    "s1_post_event_available": true,
+    "n_SUPPORTED": 30,
+    "n_DISPUTED": 14,
+    "n_UNVERIFIED": 15,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 1,
+    "independent_evidence": 1,
+    "weighted_total": 38,
+    "max_possible": 54,
+    "rank": 1
+   },
+   {
+    "cand_id": "dodda_nekkundi_a25_b12",
+    "area_km2": 25.0002,
+    "drain_len_km": 25.021971686733174,
+    "drain_density_km_per_km2": 1.000870860502443,
+    "tertiary_len_km": 50.37329967558612,
+    "n_links": 50,
+    "n_nodes": 54,
+    "n_components": 4,
+    "lcc_frac": 0.9539583326266415,
+    "gauges_inside": 6,
+    "gauges_within_2km": 13,
+    "gauges_within_5km": 26,
+    "gauge_names_within_2km": "East Banaswadi; Hal Airport; Benniganahalli; Hoysala Nagar; Hoodi; K.R.Puram; Garudacharpalya; Bangalore East (Krishnarajapur); Vijnana Nagara; Kammanahalli; Marathahalli; Doddanekkundi; Hal Airport-2",
+    "flood_location_records": 11,
+    "flood_location_clusters": 11,
+    "event_obs_inside": 1,
+    "events_with_obs": 1,
+    "event_ids_inside": "20250518_bengaluru",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.725677490234375,
+    "s1_post_event_available": false,
+    "n_SUPPORTED": 18,
+    "n_DISPUTED": 13,
+    "n_UNVERIFIED": 19,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 1,
+    "independent_evidence": 0,
+    "weighted_total": 36,
+    "max_possible": 54,
+    "rank": 2
+   },
+   {
+    "cand_id": "kodigehalli_a25_b7",
+    "area_km2": 30.3075,
+    "drain_len_km": 25.70604294145657,
+    "drain_density_km_per_km2": 0.8481743113571416,
+    "tertiary_len_km": 50.208858505213875,
+    "n_links": 31,
+    "n_nodes": 34,
+    "n_components": 3,
+    "lcc_frac": 0.8532415086503427,
+    "gauges_inside": 5,
+    "gauges_within_2km": 15,
+    "gauges_within_5km": 33,
+    "gauge_names_within_2km": "Yelankha (Ksndmc); Nagapura; East Manorayanapalya; Rajamahal Guttahalli; Kodigehalli; Shettihalli; Attur; Vidyaranyapura; Doddabommasandra; Ksndmc-Geoedge; Radhakrishna Temple Ward; Rrnagara_Hmt Ward; Marappanapalya; Yashavanthapur; Vaderahalli",
+    "flood_location_records": 16,
+    "flood_location_clusters": 16,
+    "event_obs_inside": 2,
+    "events_with_obs": 1,
+    "event_ids_inside": "20241021_bengaluru",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.8056640625,
+    "s1_post_event_available": true,
+    "n_SUPPORTED": 15,
+    "n_DISPUTED": 5,
+    "n_UNVERIFIED": 11,
+    "drainage": 2,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 1,
+    "independent_evidence": 1,
+    "weighted_total": 35,
+    "max_possible": 54,
+    "rank": 3
+   },
+   {
+    "cand_id": "deen_dayalu_ward_a10_b33",
+    "area_km2": 10.0089,
+    "drain_len_km": 14.340377196431124,
+    "drain_density_km_per_km2": 1.4327625609638546,
+    "tertiary_len_km": 23.07803270879709,
+    "n_links": 32,
+    "n_nodes": 33,
+    "n_components": 2,
+    "lcc_frac": 0.9940363968471121,
+    "gauges_inside": 3,
+    "gauges_within_2km": 10,
+    "gauges_within_5km": 26,
+    "gauge_names_within_2km": "Uttarahalli; Vishweshwarapuram; Pattabhiramanagar; Vidyapeeta; Lakkasandra; Rajarajeshwarinagar-2; Basavanagudi; Kumaraswamy Layout; Chamarajpete; Sarakki",
+    "flood_location_records": 2,
+    "flood_location_clusters": 2,
+    "event_obs_inside": 1,
+    "events_with_obs": 1,
+    "event_ids_inside": "20250518_bengaluru",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.64520263671875,
+    "s1_post_event_available": false,
+    "n_SUPPORTED": 23,
+    "n_DISPUTED": 5,
+    "n_UNVERIFIED": 4,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 1,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 1,
+    "independent_evidence": 0,
+    "weighted_total": 33,
+    "max_possible": 54,
+    "rank": 4
+   },
+   {
+    "cand_id": "hosahalli_a25_b11",
+    "area_km2": 25.1919,
+    "drain_len_km": 30.491320166443998,
+    "drain_density_km_per_km2": 1.2103620674281812,
+    "tertiary_len_km": 28.30797434973922,
+    "n_links": 52,
+    "n_nodes": 57,
+    "n_components": 7,
+    "lcc_frac": 0.8287387133159609,
+    "gauges_inside": 5,
+    "gauges_within_2km": 17,
+    "gauges_within_5km": 37,
+    "gauge_names_within_2km": "Nagapura; Nandini Layout; East Manorayanapalya; Vishweshwarapuram; Cottonpete; Rajamahal Guttahalli; Rajajinagar; Sampangiramanagar; Sampangiramanagar-2; Gali Anjaneya Temple; Maruthi Mandira; Dayanandanagar; Hampi Nagar; Chamarajpete; Agrahara Dasarahalli; Marappanapalya; Baseveswaranagar",
+    "flood_location_records": 40,
+    "flood_location_clusters": 38,
+    "event_obs_inside": 0,
+    "events_with_obs": 0,
+    "event_ids_inside": "",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.65936279296875,
+    "s1_post_event_available": false,
+    "n_SUPPORTED": 28,
+    "n_DISPUTED": 8,
+    "n_UNVERIFIED": 16,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 0,
+    "independent_evidence": 0,
+    "weighted_total": 33,
+    "max_possible": 54,
+    "rank": 5
+   },
+   {
+    "cand_id": "basavanapura_a10_b21",
+    "area_km2": 10.881,
+    "drain_len_km": 13.866489126982618,
+    "drain_density_km_per_km2": 1.2743763557561454,
+    "tertiary_len_km": 15.730567048251299,
+    "n_links": 25,
+    "n_nodes": 27,
+    "n_components": 2,
+    "lcc_frac": 0.9725781095701034,
+    "gauges_inside": 1,
+    "gauges_within_2km": 9,
+    "gauges_within_5km": 20,
+    "gauge_names_within_2km": "East Banaswadi; Benniganahalli; Basavanapura; Hoodi; K.R.Puram; Ramamurthy Nagar; Garudacharpalya; Bangalore East (Krishnarajapur); Vijnana Nagara",
+    "flood_location_records": 10,
+    "flood_location_clusters": 10,
+    "event_obs_inside": 0,
+    "events_with_obs": 0,
+    "event_ids_inside": "",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.55780029296875,
+    "s1_post_event_available": false,
+    "n_SUPPORTED": 7,
+    "n_DISPUTED": 7,
+    "n_UNVERIFIED": 11,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 0,
+    "independent_evidence": 0,
+    "weighted_total": 33,
+    "max_possible": 54,
+    "rank": 6
+   },
+   {
+    "cand_id": "dodda_bidarakallu_a10_b18",
+    "area_km2": 11.0763,
+    "drain_len_km": 17.637294007809434,
+    "drain_density_km_per_km2": 1.592345278460265,
+    "tertiary_len_km": 17.872335267462002,
+    "n_links": 44,
+    "n_nodes": 45,
+    "n_components": 2,
+    "lcc_frac": 0.7148835028845806,
+    "gauges_inside": 1,
+    "gauges_within_2km": 6,
+    "gauges_within_5km": 21,
+    "gauge_names_within_2km": "Nandini Layout; Bagalkunte; Peenya Indl.Area; Chokkasandra; Rrnagara_Hmt Ward; Madavara",
+    "flood_location_records": 10,
+    "flood_location_clusters": 10,
+    "event_obs_inside": 0,
+    "events_with_obs": 0,
+    "event_ids_inside": "",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.528564453125,
+    "s1_post_event_available": false,
+    "n_SUPPORTED": 24,
+    "n_DISPUTED": 6,
+    "n_UNVERIFIED": 14,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 0,
+    "independent_evidence": 0,
+    "weighted_total": 33,
+    "max_possible": 54,
+    "rank": 7
+   },
+   {
+    "cand_id": "okalipuram_a10_b25",
+    "area_km2": 10.0116,
+    "drain_len_km": 14.860692816479029,
+    "drain_density_km_per_km2": 1.4843474386191047,
+    "tertiary_len_km": 8.53515026169217,
+    "n_links": 36,
+    "n_nodes": 38,
+    "n_components": 4,
+    "lcc_frac": 0.9781287984348483,
+    "gauges_inside": 1,
+    "gauges_within_2km": 10,
+    "gauges_within_5km": 30,
+    "gauge_names_within_2km": "Nagapura; East Manorayanapalya; Cottonpete; Rajamahal Guttahalli; Rajajinagar; Sampangiramanagar; Sampangiramanagar-2; Dayanandanagar; Chamarajpete; Marappanapalya",
+    "flood_location_records": 9,
+    "flood_location_clusters": 9,
+    "event_obs_inside": 0,
+    "events_with_obs": 0,
+    "event_ids_inside": "",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.8270263671875,
+    "s1_post_event_available": false,
+    "n_SUPPORTED": 16,
+    "n_DISPUTED": 7,
+    "n_UNVERIFIED": 13,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 0,
+    "independent_evidence": 0,
+    "weighted_total": 33,
+    "max_possible": 54,
+    "rank": 8
+   },
+   {
+    "cand_id": "bande_mutt_a4_b83",
+    "area_km2": 4.005,
+    "drain_len_km": 9.732248831412674,
+    "drain_density_km_per_km2": 2.43002467700691,
+    "tertiary_len_km": 4.494365808698767,
+    "n_links": 19,
+    "n_nodes": 20,
+    "n_components": 1,
+    "lcc_frac": 1.0,
+    "gauges_inside": 1,
+    "gauges_within_2km": 4,
+    "gauges_within_5km": 18,
+    "gauge_names_within_2km": "Uttarahalli; Rajarajeshwarinagar; Nayandahalli; Rajarajeshwarinagar-2",
+    "flood_location_records": 8,
+    "flood_location_clusters": 8,
+    "event_obs_inside": 0,
+    "events_with_obs": 0,
+    "event_ids_inside": "",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.551910400390625,
+    "s1_post_event_available": false,
+    "n_SUPPORTED": 12,
+    "n_DISPUTED": 3,
+    "n_UNVERIFIED": 4,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 0,
+    "independent_evidence": 0,
+    "weighted_total": 33,
+    "max_possible": 54,
+    "rank": 9
+   },
+   {
+    "cand_id": "kadugondanahalli_a10_b19",
+    "area_km2": 10.4112,
+    "drain_len_km": 18.996851817086036,
+    "drain_density_km_per_km2": 1.8246553535698131,
+    "tertiary_len_km": 0.06328034453231003,
+    "n_links": 48,
+    "n_nodes": 52,
+    "n_components": 5,
+    "lcc_frac": 0.976920542834508,
+    "gauges_inside": 1,
+    "gauges_within_2km": 7,
+    "gauges_within_5km": 21,
+    "gauge_names_within_2km": "East Manorayanapalya; Pulakeshinagar; Benniganahalli; Hbr Layout; Kushalnagar; V.Nagenahalli; Kammanahalli",
+    "flood_location_records": 6,
+    "flood_location_clusters": 6,
+    "event_obs_inside": 0,
+    "events_with_obs": 0,
+    "event_ids_inside": "",
+    "dem_void_cells": 0,
+    "cop_srtm_mad_m": 1.460357666015625,
+    "s1_post_event_available": false,
+    "n_SUPPORTED": 31,
+    "n_DISPUTED": 8,
+    "n_UNVERIFIED": 9,
+    "drainage": 3,
+    "rainfall_gauges": 2,
+    "flood_observations": 2,
+    "terrain": 3,
+    "network_size": 3,
+    "events": 0,
+    "independent_evidence": 0,
+    "weighted_total": 33,
+    "max_possible": 54,
+    "rank": 10
+   }
+  ]
+ },
+ "export": {
+  "catchment_id": "domlur_a25_b13",
+  "dir": "data\\processed\\domlur_a25_b13",
+  "nodes": 66,
+  "links": 59,
+  "rejected": 1,
+  "outfalls": 12,
+  "status": {
+   "SUPPORTED": 30,
+   "UNVERIFIED": 15,
+   "DISPUTED": 14
+  },
+  "flood_observations_within_500m": 2,
+  "flood_locations_within_500m": 31,
+  "network_version": "3216f260ee12d4ee",
+  "area_km2": 27.4887
+ },
+ "runtime_s": 104.3
+}

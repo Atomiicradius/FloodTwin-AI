@@ -1,0 +1,46 @@
+# configs/evidence.yaml — evidence engine rule (owner: Role A; cross-role review required).
+# evidence_score is a transparent INDEX in [0, 1]. It is NOT a probability and is not calibrated.
+
+indicators:
+  terrain_alignment:
+    group: terrain
+    corridor_buffer_m: 45         # ASSUMED: 1.5 DEM cells; sensitivity [30, 45, 60]
+    sample_spacing_m: 15
+  terminal_plausibility:
+    group: terrain
+    plausible_min_area_km2: 0.25  # terminus on a terrain corridor of at least this upstream area
+    plausible_min_sink_depth_m: 0.5
+  connectivity_consistency:
+    group: terrain
+    trace_length_factor: 3.0      # follow terrain flow for up to 3x the link length
+    reach_buffer_m: 60
+  historical_evidence:
+    group: historical
+    buffer_m: 250                 # ASSUMED: flood location within 250 m of a segment
+    saturation_count: 3
+  imagery_evidence:
+    group: imagery                # not assessed yet (no imagery review done) -> null
+  observation_evidence:
+    group: observation            # no verified field/citizen drain audits available -> null
+
+weights:                          # ASSUMED, equal within terrain group; renormalised over available indicators
+  terrain_alignment: 0.4
+  terminal_plausibility: 0.3
+  connectivity_consistency: 0.3
+  historical_evidence: 0.0        # behavioural hint only: flooding near a drain neither confirms nor refutes the drain
+  imagery_evidence: 0.0
+  observation_evidence: 0.0
+
+status_rule:
+  # Terrain group (all DEM-derived indicators) counts as ONE independent source (tech-specs §5.3).
+  terrain_agree_min: 0.6          # terrain_index >= this -> terrain agrees with the official map
+  terrain_disagree_max: 0.3       # terrain_index <= this -> terrain disagrees materially
+  count_official_map_as_source: true   # official map + agreeing terrain = 2 sources -> SUPPORTED
+  terrain_decisive_hierarchies: [primary, secondary]   # tertiary drains are below 30 m DEM resolution -> UNVERIFIED
+  verified_requires: observation_evidence   # VERIFIED only from a reliable direct observation
+
+sensitivity:
+  weight_perturbation: 0.2        # +/- 20 % on each terrain weight, one at a time
+  threshold_shift: 0.1            # +/- 0.1 on agree/disagree thresholds
+  corridor_buffer_m: [30, 45, 60]
+  stream_threshold_km2: [0.1, 0.25, 1.0]

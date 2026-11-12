@@ -1,0 +1,240 @@
+{
+ "Basava Samithi Layout, Bengaluru": null,
+ "Bhadrappa Layout, Bengaluru": {
+  "lat": "13.0472172",
+  "lon": "77.5758689",
+  "display_name": "Bhadrappa Layout, Sanjaynagar Main Road, Nagashettyhalli, Bhoopasandra, Bengaluru North City Corporation, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560094, India",
+  "osm_type": "node",
+  "osm_id": 2450172694,
+  "category": "highway",
+  "type": "bus_stop",
+  "addresstype": "highway"
+ },
+ "Byrasandra, Bengaluru": {
+  "lat": "12.9295931",
+  "lon": "77.5811810",
+  "display_name": "Byrasandra, Bengaluru South City Corporation, Bengaluru, Bangalore South, Bengaluru Urban, Karnataka, India",
+  "osm_type": "relation",
+  "osm_id": 19884598,
+  "category": "boundary",
+  "type": "administrative",
+  "addresstype": "suburb"
+ },
+ "Divyasree Technopolis, Bengaluru": null,
+ "Doddakannelli, Bengaluru": {
+  "lat": "12.9115184",
+  "lon": "77.6934108",
+  "display_name": "Doddakannelli Lake, Doddakannalli, Gunjur, Bengaluru East City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, India",
+  "osm_type": "relation",
+  "osm_id": 17083906,
+  "category": "water",
+  "type": "lake",
+  "addresstype": "lake"
+ },
+ "HSR Layout, Bengaluru": {
+  "lat": "12.9116225",
+  "lon": "77.6388622",
+  "display_name": "HSR Layout, Bengaluru South City Corporation, Bengaluru, Bangalore South, Bengaluru Urban, Karnataka, 560102, India",
+  "osm_type": "relation",
+  "osm_id": 17168010,
+  "category": "place",
+  "type": "suburb",
+  "addresstype": "suburb"
+ },
+ "Indiranagar, Bengaluru": {
+  "lat": "12.9732913",
+  "lon": "77.6404672",
+  "display_name": "Indiranagar, Jogpalya, Bengaluru Central City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, 560008, India",
+  "osm_type": "node",
+  "osm_id": 448991617,
+  "category": "place",
+  "type": "suburb",
+  "addresstype": "suburb"
+ },
+ "Kamaraj Nagar, Bengaluru": {
+  "lat": "12.9761783",
+  "lon": "77.6083098",
+  "display_name": "Kamaraj Road, Ashok Nagar, Ashokanagar, Bengaluru Central City Corporation, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560001, India",
+  "osm_type": "way",
+  "osm_id": 705023783,
+  "category": "highway",
+  "type": "secondary",
+  "addresstype": "secondary"
+ },
+ "Kendriya Vihar, Yelahanka, Bengaluru": {
+  "lat": "13.1066272",
+  "lon": "77.5997205",
+  "display_name": "Kendriya Vihar Apartments, Akash Ward, Bengaluru North City Corporation, Bengaluru, Yelahanka taluku, Bengaluru Urban, Karnataka, India",
+  "osm_type": "way",
+  "osm_id": 96710695,
+  "category": "landuse",
+  "type": "residential",
+  "addresstype": "residential"
+ },
+ "Kengeri, Bengaluru": {
+  "lat": "12.9176571",
+  "lon": "77.4837568",
+  "display_name": "Kengeri, Kengeri Main Road, Kengeri, Bengaluru West City Corporation, Bengaluru, Bangalore South, Bengaluru Urban, Karnataka, 560060, India",
+  "osm_type": "node",
+  "osm_id": 308062102,
+  "category": "railway",
+  "type": "station",
+  "addresstype": "railway"
+ },
+ "Kodigehalli, Bengaluru": {
+  "lat": "13.0031666",
+  "lon": "77.7272835",
+  "display_name": "Kodigehalli, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, 560048, India",
+  "osm_type": "node",
+  "osm_id": 2890884582,
+  "category": "place",
+  "type": "village",
+  "addresstype": "village"
+ },
+ "Koramangala, Bengaluru": {
+  "lat": "12.9357366",
+  "lon": "77.6240810",
+  "display_name": "Koramangala, Sri Lakshmi Devi Ward, Bengaluru South City Corporation, Bengaluru, Bangalore South, Bengaluru Urban, Karnataka, 560095, India",
+  "osm_type": "node",
+  "osm_id": 429918282,
+  "category": "place",
+  "type": "suburb",
+  "addresstype": "suburb"
+ },
+ "Kuvempu Nagar, Yelahanka, Bengaluru": {
+  "lat": "13.0694142",
+  "lon": "77.5401252",
+  "display_name": "Kuvempu Nagar 1st Stage, Kammagondanahalli, Kuvempunagara, Bengaluru North City Corporation, Bengaluru, Yelahanka taluku, Bengaluru Urban, Karnataka, 560014, India",
+  "osm_type": "node",
+  "osm_id": 10310634652,
+  "category": "place",
+  "type": "neighbourhood",
+  "addresstype": "neighbourhood"
+ },
+ "Mahadevapura, Bengaluru": {
+  "lat": "12.9965445",
+  "lon": "77.6927176",
+  "display_name": "Singayyanapalya, Whitefield Road, Devasandra, Bengaluru East City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, 560048, India",
+  "osm_type": "node",
+  "osm_id": 5760197764,
+  "category": "railway",
+  "type": "station",
+  "addresstype": "railway"
+ },
+ "Marathahalli, Bengaluru": {
+  "lat": "12.9552572",
+  "lon": "77.6984163",
+  "display_name": "Marathahalli, Bengaluru East City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, India",
+  "osm_type": "relation",
+  "osm_id": 19884550,
+  "category": "boundary",
+  "type": "administrative",
+  "addresstype": "suburb"
+ },
+ "Panathur, Bengaluru": {
+  "lat": "12.9351457",
+  "lon": "77.7047541",
+  "display_name": "Panathur, Bengaluru East City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, India",
+  "osm_type": "relation",
+  "osm_id": 19883259,
+  "category": "boundary",
+  "type": "administrative",
+  "addresstype": "suburb"
+ },
+ "RMZ Ecospace, Bellandur, Bengaluru": null,
+ "Rainbow Drive, Sarjapur Road, Bengaluru": null,
+ "S T Bed Layout, Koramangala, Bengaluru": null,
+ "Sai Layout, Horamavu, Bengaluru": null,
+ "Sarjapur Road, Bellandur, Bengaluru": null,
+ "Silk Board Junction, Bengaluru": {
+  "lat": "12.9158955",
+  "lon": "77.6239872",
+  "display_name": "Silk Board Junction, Srinagar - Kanyakumari Highway, MCHS Colony, HSR Layout, Bengaluru South City Corporation, Bengaluru, Bangalore South, Bengaluru Urban, Karnataka, 560102, India",
+  "osm_type": "node",
+  "osm_id": 13955791826,
+  "category": "highway",
+  "type": "bus_stop",
+  "addresstype": "highway"
+ },
+ "Tata Nagar, Kodigehalli, Bengaluru": null,
+ "Varthur, Bengaluru": {
+  "lat": "12.9406508",
+  "lon": "77.7469880",
+  "display_name": "Varthur, Bengaluru East City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, 560087, India",
+  "osm_type": "relation",
+  "osm_id": 19883430,
+  "category": "boundary",
+  "type": "administrative",
+  "addresstype": "suburb"
+ },
+ "Vidyaranyapura, Bengaluru": {
+  "lat": "13.0766407",
+  "lon": "77.5577315",
+  "display_name": "Vidyaranyapura, Singapura, Bengaluru North City Corporation, Bengaluru, Yelahanka taluku, Bengaluru Urban, Karnataka, 560097, India",
+  "osm_type": "node",
+  "osm_id": 308715244,
+  "category": "place",
+  "type": "suburb",
+  "addresstype": "suburb"
+ },
+ "Ecospace, Bellandur": {
+  "lat": "12.9283411",
+  "lon": "77.6811574",
+  "display_name": "Ecospace, Service Road, Green Glen Layout, Bellanduru, Bellandur, Bengaluru East City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, 560103, India",
+  "osm_type": "node",
+  "osm_id": 3170452369,
+  "category": "highway",
+  "type": "bus_stop",
+  "addresstype": "highway"
+ },
+ "Horamavu, Bengaluru": {
+  "lat": "13.0273312",
+  "lon": "77.6601508",
+  "display_name": "Horamavu, Bengaluru East City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, India",
+  "osm_type": "relation",
+  "osm_id": 19884576,
+  "category": "boundary",
+  "type": "administrative",
+  "addresstype": "suburb"
+ },
+ "Kodigehalli Gate, Bengaluru": {
+  "lat": "13.0576735",
+  "lon": "77.5931668",
+  "display_name": "Kodigehalli Gate, Bellary Road, Byatarayanapura, Rajiv Gandhi Nagar, Bengaluru North City Corporation, Bengaluru, Yelahanka taluku, Bengaluru Urban, Karnataka, 560092, India",
+  "osm_type": "node",
+  "osm_id": 3739207821,
+  "category": "highway",
+  "type": "bus_stop",
+  "addresstype": "highway"
+ },
+ "Rainbow Drive Layout, Bengaluru": {
+  "lat": "12.9062184",
+  "lon": "77.6868312",
+  "display_name": "Rainbow Drive Layout, Doddakannalli, Kasavanahalli, Bengaluru South City Corporation, Bengaluru, Bangalore East, Bengaluru Urban, Karnataka, India",
+  "osm_type": "way",
+  "osm_id": 101573097,
+  "category": "landuse",
+  "type": "residential",
+  "addresstype": "residential"
+ },
+ "ST Bed Layout, Bengaluru": {
+  "lat": "12.9347699",
+  "lon": "77.6324307",
+  "display_name": "ST Bed Layout, Kormangala East, Bengaluru South City Corporation, Bengaluru, Bangalore South, Bengaluru Urban, Karnataka, 560095, India",
+  "osm_type": "node",
+  "osm_id": 1278162259,
+  "category": "place",
+  "type": "neighbourhood",
+  "addresstype": "neighbourhood"
+ },
+ "Tatanagar, Bengaluru": {
+  "lat": "13.0550859",
+  "lon": "77.5737868",
+  "display_name": "Tatanagar, Kodigehalli, Bengaluru North City Corporation, Bengaluru, Yelahanka taluku, Bengaluru Urban, Karnataka, 560092, India",
+  "osm_type": "node",
+  "osm_id": 2112118396,
+  "category": "place",
+  "type": "quarter",
+  "addresstype": "quarter"
+ }
+}

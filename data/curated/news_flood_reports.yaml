@@ -1,0 +1,57 @@
+# Hand-curated event reports (owner: Role A). Tracked in git like MANIFEST.yaml.
+# Rule: every row quotes a place name exactly as it appears in the cited article; nothing is
+# added from memory. Coordinates are NOT stored here: they come from OpenStreetMap Nominatim
+# at build time (floodtwin.geo.observations) and are therefore locality-level, not the exact
+# flooded spot -> confidence "low" by default.
+# timestamp: article publication time (IST) = upper bound on observation time; or date only.
+# depth_m_reported: converted from the article's units; "up to" values are maxima, not means.
+events:
+  - event_ref: "20170815"
+    nominal_start_ist: "2017-08-14T18:00"   # ASSUMED: articles say "overnight"/"night of"; 18:00 IST chosen as nominal start for the Sentinel-1 window only
+    description: Overnight 14-15 Aug 2017 rain, flooding reported 15 Aug 2017 (morning)
+    rainfall_notes: "Not reported in cited article; other coverage cites IMD ~128.7 mm city station (not verified here)"
+  - event_ref: "20220905"
+    nominal_start_ist: "2022-09-04T18:00"   # ASSUMED: articles say "overnight"/"night of"; 18:00 IST chosen as nominal start for the Sentinel-1 window only
+    description: Night of 4-5 Sep 2022, ORR / Mahadevapura / Bellandur flooding
+    rainfall_notes: "Cited article: IMD 131 mm city overnight; KSNDMC Marathahalli 129 mm (to 03:15), Doddanekundi 125 mm (to 03:00), Bandikodagehalli 125 mm, HSR Layout 65 mm (to 03:30)"
+  - event_ref: "20241021"
+    nominal_start_ist: "2024-10-21T18:00"   # ASSUMED: articles say "overnight"/"night of"; 18:00 IST chosen as nominal start for the Sentinel-1 window only
+    description: Night of 21-22 Oct 2024, north Bengaluru / Yelahanka flooding
+    rainfall_notes: "Cited article gives no mm values; other coverage attributes ~190 mm Yelahanka to KSNDMC (not verified here)"
+  - event_ref: "20250518"
+    nominal_start_ist: "2025-05-18T18:00"   # ASSUMED: articles say "overnight"/"night of"; 18:00 IST chosen as nominal start for the Sentinel-1 window only
+    description: Night of 18-19 May 2025 flooding
+    rainfall_notes: "Cited article: IMD city 105.5 mm to 08:30 19 May; KSNDMC Kengeri 132 mm, GEO Campus 125.8 mm, Somashettihalli 119.5 mm, Madanayakanahalli 116.5 mm, Yelahanka Chowdeshwari 103.5 mm"
+
+reports:
+  # --- 2017-08-15 -----------------------------------------------------------------
+  - {event_ref: "20170815", place: "S.T. Bed Layout, Koramangala", query: "ST Bed Layout, Bengaluru", depth_m_reported: 0.30, depth_note: "at least one foot on the main road into the layout", timestamp_ist: "2017-08-15", source_url: "https://citizenmatters.in/august-2017-rain-bangalore-floods/", observation_type: news}
+  # --- 2022-09-05 (article published 2022-09-05 04:28 IST) ------------------------
+  - {event_ref: "20220905", place: "Marathahalli", query: "Marathahalli, Bengaluru", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "Sarjapur road", query: null, geocode_note: "linear feature >10 km; no defensible point location", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "Silk Board", query: "Silk Board Junction, Bengaluru", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "HSR Layout", query: "HSR Layout, Bengaluru", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "Varthur", query: "Varthur, Bengaluru", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "Eco Space, Bellandur", query: "Ecospace, Bellandur", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "Balagere Panathur", query: "Panathur, Bengaluru", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "Indiranagar", query: "Indiranagar, Bengaluru", depth_note: "water reaching car wheels (no number)", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "DivyaSree Technopolis", query: "Divyasree Technopolis, Bengaluru", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  - {event_ref: "20220905", place: "Doddakanneli", query: "Doddakannelli, Bengaluru", timestamp_ist: "2022-09-05T04:28", source_url: "https://www.thenewsminute.com/article/bengaluru-flooded-again-after-rains-marathahalli-orr-under-water-167535", observation_type: news}
+  # --- 2024-10-21/22 (article published 2024-10-22 08:29 IST) ----------------------
+  - {event_ref: "20241021", place: "Kendriya Vihar, Yelahanka", query: "Kendriya Vihar, Yelahanka, Bengaluru", depth_m_reported: 1.83, depth_note: "up to 6 ft (BBMP Chief Commissioner, quoted)", timestamp_ist: "2024-10-22T08:29", source_url: "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month", observation_type: news}
+  - {event_ref: "20241021", place: "Vidyaranyapura", query: "Vidyaranyapura, Bengaluru", depth_m_reported: 1.22, depth_note: "up to 4 ft inside homes", timestamp_ist: "2024-10-22T08:29", source_url: "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month", observation_type: news}
+  - {event_ref: "20241021", place: "Kuvempu Nagar", query: "Kuvempu Nagar, Yelahanka, Bengaluru", timestamp_ist: "2024-10-22T08:29", source_url: "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month", observation_type: news}
+  - {event_ref: "20241021", place: "Tatanagar", query: "Tatanagar, Bengaluru", depth_note: "up to 6 ft at some locations in Tatanagar/Bhadrappa Layout/Kodigehalli/Hebbal Sarovara (not location-specific)", timestamp_ist: "2024-10-22T08:29", source_url: "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month", observation_type: news}
+  - {event_ref: "20241021", place: "Bhadrappa Layout", query: "Bhadrappa Layout, Bengaluru", timestamp_ist: "2024-10-22T08:29", source_url: "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month", observation_type: news}
+  - {event_ref: "20241021", place: "Kodigehalli", query: "Kodigehalli Gate, Bengaluru", geocode_note: "plain Kodigehalli resolved to an eastern village of the same name; the north-Bengaluru one is located via Kodigehalli Gate (Bellary Road)", timestamp_ist: "2024-10-22T08:29", source_url: "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month", observation_type: news}
+  - {event_ref: "20241021", place: "Basava Samithi Layout", query: "Basava Samithi Layout, Bengaluru", timestamp_ist: "2024-10-22T08:29", source_url: "https://www.thenewsminute.com/karnataka/bengalurus-kendriya-vihar-apartments-in-yelahanka-flood-for-the-third-time-in-a-month", observation_type: news}
+  # --- 2025-05-18/19 (articles published 2025-05-19 07:43 IST and 19:58 IST) --------
+  - {event_ref: "20250518", place: "Sri Sai Layout in Horamavu", query: "Horamavu, Bengaluru", geocode_note: "Sri Sai Layout not in OSM; suburb-level fallback", timestamp_ist: "2025-05-19T07:43", source_url: "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions", observation_type: news}
+  - {event_ref: "20250518", place: "Rainbow Drive Layout", query: "Rainbow Drive Layout, Bengaluru", timestamp_ist: "2025-05-19T07:43", source_url: "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions", observation_type: news}
+  - {event_ref: "20250518", place: "Koramangala", query: "Koramangala, Bengaluru", timestamp_ist: "2025-05-19T07:43", source_url: "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions", observation_type: news}
+  - {event_ref: "20250518", place: "Indiranagar", query: "Indiranagar, Bengaluru", timestamp_ist: "2025-05-19T07:43", source_url: "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions", observation_type: news}
+  - {event_ref: "20250518", place: "Silk Board", query: "Silk Board Junction, Bengaluru", timestamp_ist: "2025-05-19T07:43", source_url: "https://www.thenewsminute.com/karnataka/bengaluru-waterlogged-after-heavy-rains-commuters-face-traffic-disruptions", observation_type: news}
+  - {event_ref: "20250518", place: "Kengeri", query: "Kengeri, Bengaluru", depth_note: "around 100 houses flooded", timestamp_ist: "2025-05-19T19:58", source_url: "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall", observation_type: news}
+  - {event_ref: "20250518", place: "Byrasandra layout", query: "Byrasandra, Bengaluru", timestamp_ist: "2025-05-19T19:58", source_url: "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall", observation_type: news}
+  - {event_ref: "20250518", place: "Kamaraj Nagar", query: null, geocode_note: "ambiguous name; OSM returns Kamaraj Road (different place)", timestamp_ist: "2025-05-19T19:58", source_url: "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall", observation_type: news}
+  - {event_ref: "20250518", place: "Mahadevapura", query: "Mahadevapura, Bengaluru", timestamp_ist: "2025-05-19T19:58", source_url: "https://www.newsonair.gov.in/bengaluru-several-areas-inundated-by-overnight-rainfall", observation_type: news}

@@ -1,0 +1,56 @@
+{
+  "run_id": "20261112T084701Z_3216f2",
+  "exp_class": "C_historical",
+  "exp_class_note": "real observed data products; no predictive-performance claim",
+  "catchment_id": "domlur_a25_b13",
+  "network_version": "3216f260ee12d4ee",
+  "git_commit": null,
+  "git_dirty": null,
+  "git_note": "working copy is not a git repository; Role D to tag data-v1 once the repo exists",
+  "config_hash": "12b42abf1ec98c23",
+  "input_file_hashes": {
+    "bbmp_low_lying_areas": "72e0cea9febaca1e849a14b62f52682c0112ab839675fe443650092e656feab0",
+    "bbmp_wards_2022": "8ee0268d9956a61a671c732e670649386cf09b6ddd1fee74526768d7cbfc6971",
+    "bbmp_zones_2022": "a4cb73bd5785b8c7bbe38c3b506934d0a76038976e244d369e4bb06424c7be21",
+    "dem_cop30_n12e077": "a58736cc901e3baca38721d0dd4b1048bf2a67328592e93420c7413d5012ae02",
+    "dem_cop30_n13e077": "3bacdbc63c1a0b95f570893578ed4a6b93c9e5ed2d6783f9caf6fc5bdd43c1f1",
+    "dem_srtm_n12e077": "9485ba04696bbe2074a0b6cab79d0f12ecca79ad05b19d676ea35056beafd14e",
+    "dem_srtm_n13e077": "9df6fb12a3a13bee6dfa8d3666869e0e2cca3688ac9005c42654be415689363a",
+    "flood_prone_locations": "b9a2df47c412401b811dacd895cb2abc05603fbbe3a915ce97064521309c8207",
+    "flood_vulnerable_locations": "a10ee4c2b647f61b5a373f3eba2ba9dbf2f8a43cb79dd39853da9b11b8d10e5e",
+    "imd_bengaluru_monthly_rain": "dab8758dc9df613c1c89597fef2e735a19edc65c334881ecdfb30de82cdbb0cd",
+    "ksndmc_aws_bengaluru_list": "f62be0a4dda534e21a76e158329b073ccaf996ef1247fce07e701029bd47e5f7",
+    "ksndmc_trg_bengaluru_urban": "ca32979be4f677e79e08850049b9d0efa23d91f1d638c3d0ed4964a262078c54",
+    "osm_waterways_snapshot": "521784f992dd37c236acc94874ede3331b8bfed2416ad587ca04ba1cc124994e",
+    "swd_all_2022": "f6d58112c467e6efd55a4a74e6225c68ac3d15457fa989d40faf1cc1c230865e",
+    "swd_primary_2022": "43063312663ee6080817bda73166ee3cb88e78a37b48869504a8751093388004",
+    "swd_secondary_2022": "57bbe5346eb2e482e8e611a2f4a0411468921dfe5c05dbe247c1e6a9a16550c1",
+    "swd_tertiary_2022": "6cc55e74b965b4543adb2489c31dbd0160e4af2161323833babfae5c9bb9e2f3"
+  },
+  "curated_file_hash": "e2a573cc30c17617a093d0eb175fd483a31d9c15743a8d2ed15d09973bd8da41",
+  "seed": 20261111,
+  "software_versions": {
+    "python": "3.10.11",
+    "geopandas": "1.1.4",
+    "rasterio": "1.4.4",
+    "shapely": "2.1.2",
+    "numpy": "2.2.6"
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.26300-SP0",
+    "cpu": "AMD64 Family 26 Model 96 Stepping 0, AuthenticAMD"
+  },
+  "counts": {
+    "nodes": 66,
+    "links": 59,
+    "rejected": 1,
+    "outfalls": 12,
+    "status": {
+      "SUPPORTED": 30,
+      "UNVERIFIED": 15,
+      "DISPUTED": 14
+    },
+    "flood_observations_within_500m": 2,
+    "flood_locations_within_500m": 31
+  }
+}
