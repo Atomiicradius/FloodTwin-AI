@@ -13,12 +13,20 @@ npm run dev      # http://localhost:5173
 npm run build    # static build in web/dist (works offline, no backend)
 ```
 
-## The seven steps
+## Presentation layer (scrollytelling)
 
-1. Event & location · 2. Infrastructure evidence · 3. Baseline simulation · 4. Counterfactual ·
-5. Interactions · 6. Uncertainty · 7. AI scalability
+One continuous scroll narrative: a pinned full-height stage behind, story panels scrolling over it.
 
-Keys: `←` `→` steps, `1`–`7` jump, `P` presenter mode (narration captions).
+- Stack: React + Vite, Tailwind v4, shadcn-style components (`src/components/ui`: Slider, Tabs, Sheet, Tooltip over Radix), GSAP + ScrollTrigger, Lenis.
+- Motion system in `src/motion/`: `initSmoothScroll` (Lenis driven by the GSAP ticker), `Reveal`, `CountUp`, `ChartReveal` (draw-in lines, growing bars). All respect `prefers-reduced-motion` (Lenis off, content shown immediately).
+- Story in `src/story/`: `Hero`, `Stage` (canvas rain crossfading to flowing water lines; **placeholder for the map**), `sections1.jsx` (1-4), `sections2.jsx` (5-7), shared `kit.jsx`.
+- Fully offline: fonts are bundled (`@fontsource`), no CDN, no tiles. `MapView.jsx` and `legacy-map.css` are kept untouched for the map's return.
+
+Sections: 1 Event & location - 2 Infrastructure evidence - 3 Baseline simulation - 4 Counterfactual -
+5 Interactions - 6 Uncertainty - 7 AI scalability.
+
+Keys: `<-` `->` previous/next section, `1`-`7` jump, `0` intro, `P` presenter mode (narration captions).
+Each section has a "Limitations & assumptions" sheet.
 
 ## How the demo numbers are produced
 

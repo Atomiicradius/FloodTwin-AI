@@ -1,19 +1,12 @@
-import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { FlaskConical } from 'lucide-react'
 import { buildNetwork } from './data/network.js'
 import { buildEvents } from './data/events.js'
-import {
-  buildGrid,
-  flowAccumulation,
-  renderDeltaImage,
-  renderDepthImage,
-  renderFlowImage,
-  renderTerrainImage,
-} from './data/terrain.js'
+import { buildGrid } from './data/terrain.js'
 import { centralScenario, simulate } from './model/sim.js'
 import { floodStats, spreadFlood } from './model/spread.js'
 import {
   BENCH_DEFAULTS,
-  NO_CF,
   applyMods,
   interactionAnalysis,
   matchObservations,
@@ -21,27 +14,15 @@ import {
   runEnsemble,
 } from './model/analysis.js'
 import { STEPS } from './copy.js'
-import MapView from './components/MapView.jsx'
-import {
-  AiPanel,
-  CounterfactualPanel,
-  EventPanel,
-  EvidencePanel,
-  InteractionPanel,
-  SimPanel,
-  UncertaintyPanel,
-} from './components/panels.jsx'
-import { Badge, Icon } from './components/ui.jsx'
+import { ScrollTrigger, destroySmoothScroll, initSmoothScroll, scrollToTarget, stageBus } from './motion/index.js'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip.jsx'
+import Stage from './story/Stage.jsx'
+import Hero from './story/Hero.jsx'
+import { Pill } from './story/kit.jsx'
+import { CfSection, EventSection, EvidenceSection, SimSection } from './story/sections1.jsx'
+import { AiSection, InteractionSection, UncertaintySection } from './story/sections2.jsx'
 
-const LAYER_PRESETS = [
-  { terrain: true, flow: false, drains: true, status: false, obs: true, flood: true },
-  { terrain: true, flow: true, drains: true, status: true, obs: false, flood: false },
-  { terrain: true, flow: false, drains: true, status: false, obs: true, flood: true },
-  { terrain: true, flow: false, drains: true, status: false, obs: false, flood: true },
-  { terrain: true, flow: false, drains: true, status: true, obs: false, flood: true },
-  { terrain: true, flow: false, drains: true, status: false, obs: false, flood: false },
-  { terrain: true, flow: false, drains: true, status: false, obs: false, flood: false },
-]
+const LABELS = ['Intro', ...STEPS.map((s) => s.title)]
 
 const cfLabel = (cf) => {
   const parts = []
@@ -51,28 +32,25 @@ const cfLabel = (cf) => {
   return parts.length ? parts.join(' + ') : 'no change'
 }
 
+const INTRO_NARRATION =
+  'Urban flood predictions are only as reliable as the drainage maps behind them. Scroll, or press the right arrow, to follow one investigation from storm to conclusion.'
+
 export default function App() {
   const net = useMemo(buildNetwork, [])
   const events = useMemo(() => buildEvents(net), [net])
   const grid = useMemo(buildGrid, [])
-  const images = useMemo(() => {
-    const { acc, parent } = flowAccumulation(grid)
-    return { terrain: renderTerrainImage(), flow: renderFlowImage(acc, parent) }
-  }, [grid])
 
-  const [step, setStep] = useState(0)
+  const [active, setActive] = useState(0) // 0 = hero, 1..7 = chapters
   const [evIdx, setEvIdx] = useState(0)
-  const [selSeg, setSelSeg] = useState(null)
-  const [selNode, setSelNode] = useState(null)
-  const [layers, setLayers] = useState(LAYER_PRESETS[0])
+  const [selSeg, setSelSeg] = useState(net.hotSeg)
+  const [selNode, setSelNode] = useState(net.hotNode)
   const [simStage, setSimStage] = useState(0)
   const [cf, setCf] = useState({ cap: 1, block: 0, rain: 1 })
-  const [showDelta, setShowDelta] = useState(true)
   const [bench, setBench] = useState({ ...BENCH_DEFAULTS })
   const [presenter, setPresenter] = useState(false)
-  const [limitsOpen, setLimitsOpen] = useState(false)
-  const [focus, setFocus] = useState(null)
   const timers = useRef([])
+  const heroRef = useRef(null)
+  const simStarted = useRef(false)
 
   const ev = events[evIdx]
   const cfDeferred = useDeferredValue(cf)
@@ -83,7 +61,7 @@ export default function App() {
     [net],
   )
 
-  // baseline run for the selected event
+  // ---- model results (logic unchanged) ----
   const baseRun = useMemo(() => simulate(net, ev, base, { series: true }), [net, ev, base])
   const baseSpread = useMemo(() => spreadFlood(grid, toFloods(baseRun)), [grid, baseRun, toFloods])
   const spreadStats = useMemo(() => floodStats(baseSpread.depth), [baseSpread])
@@ -91,9 +69,6 @@ export default function App() {
     () => matchObservations(baseSpread.depth, ev.obs, net.nodes, baseRun.floodVol),
     [baseSpread, ev, net, baseRun],
   )
-  const baseDepthImg = useMemo(() => renderDepthImage(baseSpread.depth), [baseSpread])
-
-  // same frozen baseline model evaluated on every event (SYN-3 is held out of any tuning)
   const evalAll = useMemo(
     () =>
       events.map((e) => {
@@ -104,21 +79,14 @@ export default function App() {
       }),
     [events, net, base, grid, toFloods],
   )
-
-  // counterfactual
   const cfRun = useMemo(() => simulate(net, ev, applyMods(net, base, cfDeferred)), [net, ev, base, cfDeferred])
   const cfSpread = useMemo(() => spreadFlood(grid, toFloods(cfRun)), [grid, cfRun, toFloods])
   const cfStats = useMemo(() => floodStats(cfSpread.depth), [cfSpread])
-  const cfDepthImg = useMemo(() => renderDepthImage(cfSpread.depth), [cfSpread])
-  const deltaImg = useMemo(() => renderDeltaImage(baseSpread.depth, cfSpread.depth), [baseSpread, cfSpread])
-
-  const needInter = step >= 4
-  const needEns = step >= 5
-  const inter = useMemo(() => (needInter ? interactionAnalysis(net, ev, base) : null), [needInter, net, ev, base])
-  const ens = useMemo(() => (needEns ? runEnsemble(net, ev, cfDeferred) : null), [needEns, net, ev, cfDeferred])
+  const inter = useMemo(() => interactionAnalysis(net, ev, base), [net, ev, base])
+  const ens = useMemo(() => runEnsemble(net, ev, cfDeferred), [net, ev, cfDeferred])
   const parity = useMemo(() => parityPoints(), [])
 
-  // simulation reveal animation
+  // ---- simulation reveal ----
   const clearTimers = () => {
     timers.current.forEach(clearTimeout)
     timers.current = []
@@ -132,273 +100,160 @@ export default function App() {
   }, [])
   useEffect(() => clearTimers, [])
 
-  const focusOn = useCallback((x, y, zoom = 2) => setFocus({ x, y, zoom, key: Math.random() }), [])
-  const focusSeg = useCallback(
-    (i) => {
-      const s = net.segs[i]
-      const a = net.nodes[s.from]
-      const b = net.nodes[s.to]
-      setSelSeg(i)
-      focusOn((a.x + b.x) / 2, (a.y + b.y) / 2, 2.3)
-    },
-    [net, focusOn],
-  )
+  // the pipeline plays the first time the baseline chapter is reached
+  useEffect(() => {
+    if (active === 3 && !simStarted.current) {
+      simStarted.current = true
+      runSim()
+    }
+  }, [active, runSim])
 
-  // step transitions
-  const goStep = useCallback(
-    (n) => {
-      const next = Math.max(0, Math.min(STEPS.length - 1, n))
-      setStep(next)
-      setLayers(LAYER_PRESETS[next])
-      setLimitsOpen(false)
-      if (next === 1) {
-        setSelNode(null)
-        focusSeg(net.hotSeg)
-      } else if (next === 2) {
-        setSelSeg(null)
-        setSelNode(net.hotNode)
-        setFocus({ reset: true, key: Math.random() })
-        setSimStage((s) => {
-          if (s === 0) setTimeout(runSim, 350)
-          return s
-        })
-      } else if (next === 3) {
-        setSelSeg(null)
-        const n = net.nodes[net.hotNode]
-        focusOn(n.x, n.y, 1.6)
-      } else {
-        setSelSeg(null)
-        setSelNode(null)
-        setFocus({ reset: true, key: Math.random() })
-      }
-    },
-    [net, focusSeg, focusOn, runSim],
-  )
-
-  // switching event restarts the reveal if we are on the simulation step
   const changeEvent = (i) => {
     setEvIdx(i)
     clearTimers()
     setSimStage(0)
-    if (step === 2) setTimeout(runSim, 150)
+    if (simStarted.current) setTimeout(runSim, 200)
   }
+
+  // ---- scroll: smooth scroll, active chapter, hero -> story crossfade ----
+  useLayoutEffect(() => {
+    initSmoothScroll()
+    const hero = heroRef.current
+    const chapters = [...document.querySelectorAll('[data-chapter]')]
+    const triggers = [
+      ScrollTrigger.create({
+        trigger: hero,
+        start: 'top top',
+        end: 'bottom 30%',
+        scrub: true,
+        onUpdate: (self) => (stageBus.mix = self.progress),
+      }),
+      ScrollTrigger.create({
+        trigger: hero,
+        start: 'top 60%',
+        end: 'bottom 60%',
+        onToggle: (self) => self.isActive && setActive(0),
+      }),
+      ...chapters.map((el, i) =>
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 55%',
+          end: 'bottom 55%',
+          onToggle: (self) => self.isActive && setActive(i + 1),
+        }),
+      ),
+    ]
+    ScrollTrigger.refresh()
+    return () => {
+      triggers.forEach((t) => t.kill())
+      destroySmoothScroll()
+    }
+  }, [])
+
+  const goTo = useCallback((i) => {
+    const n = Math.max(0, Math.min(STEPS.length, i))
+    if (n === 0) scrollToTarget(0, { duration: 1.6 })
+    else scrollToTarget(document.getElementById(`ch-${n - 1}`), { duration: 1.6 })
+  }, [])
 
   useEffect(() => {
     const onKey = (e) => {
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return
-      if (e.key === 'ArrowRight') goStep(step + 1)
-      else if (e.key === 'ArrowLeft') goStep(step - 1)
-      else if (e.key.toLowerCase() === 'p') setPresenter((v) => !v)
-      else if (/^[1-7]$/.test(e.key)) goStep(Number(e.key) - 1)
+      if (e.target.closest?.('input, textarea, [role="dialog"], [role="slider"]')) return
+      if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        goTo(active + 1)
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        goTo(active - 1)
+      } else if (e.key.toLowerCase() === 'p') setPresenter((v) => !v)
+      else if (/^[1-7]$/.test(e.key)) goTo(Number(e.key))
+      else if (e.key === '0') goTo(0)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [step, goStep])
+  }, [active, goTo])
 
-  // ---- what the map shows at each step ----
-  let floodMode = 'none'
-  let depthImg = null
-  let showD = false
-  let obsList = ev.obs
-  let highlight = []
-  let freq = null
-  let stageLabel = null
-  if (step === 2) {
-    floodMode = simStage >= 4 ? 'full' : simStage >= 3 ? 'nodes' : 'none'
-    depthImg = baseDepthImg
-    if (simStage >= 5) obsList = match.reports
-    stageLabel = simStage === 0 ? 'Ready' : simStage < 5 ? `Step ${simStage} of 5 · ${['', 'Rainfall', 'Runoff', 'Drainage model', 'Surface spreading'][simStage]}` : 'Baseline complete'
-  } else if (step === 3) {
-    floodMode = 'full'
-    depthImg = cfDepthImg
-    showD = showDelta
-    stageLabel = `Counterfactual: ${cfLabel(cf)}`
-  } else if (step === 4) {
-    floodMode = 'full'
-    depthImg = baseDepthImg
-    highlight = net.disputedSegs
-    stageLabel = 'Disputed segments highlighted'
-  } else if (step === 5 && ens) {
-    freq = { base: ens.freqBase, cf: ens.freqCf }
-    stageLabel = `${ens.n} scenarios`
-  }
-
-  const stepDef = STEPS[step]
-  const wide = step === 6
-
-  let panel = null
-  if (step === 0)
-    panel = <EventPanel net={net} events={events} evIdx={evIdx} setEvIdx={changeEvent} ev={ev} focusOn={focusOn} />
-  else if (step === 1) panel = <EvidencePanel net={net} selSeg={selSeg} setSelSeg={setSelSeg} focusSeg={focusSeg} />
-  else if (step === 2)
-    panel = (
-      <SimPanel
-        ctx={{ net, ev, events, simStage, runSim, baseRun, baseSpread, spreadStats, match, evalAll, selNode, setSelNode, focusOn }}
-      />
-    )
-  else if (step === 3)
-    panel = (
-      <CounterfactualPanel
-        ctx={{ net, cf, setCf, baseRun, cfRun, cfSpread, spreadStats, cfStats, showDelta, setShowDelta, focusOn }}
-      />
-    )
-  else if (step === 4 && inter) panel = <InteractionPanel inter={inter} />
-  else if (step === 5 && ens) panel = <UncertaintyPanel ens={ens} cfLabel={cfLabel(cfDeferred)} />
-  else if (step === 6) panel = <AiPanel bench={bench} setBench={setBench} parity={parity} />
+  const sectionTitle = active === 0 ? '' : STEPS[active - 1].title
+  const narration = active === 0 ? INTRO_NARRATION : STEPS[active - 1].narration
 
   return (
-    <div className="shell">
-      <div className="ribbon">
-        <span className="ribbon-dot" />
+    <TooltipProvider delayDuration={120}>
+      <div className="banner">
+        <i />
         Prototype · synthetic demo data · invented catchment, storms and reports · illustrates the workflow, not a real result
       </div>
 
-      <header className="topbar">
-        <div className="brand">
-          <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
-            <rect width="32" height="32" rx="9" fill="#0f1a2e" stroke="rgba(148,163,184,.25)" />
+      <header className={`topbar ${active > 0 ? 'solid' : ''}`}>
+        <div className="brandmark">
+          <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#0b1424" stroke="rgba(255,255,255,.18)" />
             <path d="M6 19c3-4 5 4 8 0s5 4 8 0 3-2 4-1" stroke="#38bdf8" strokeWidth="2.5" fill="none" strokeLinecap="round" />
             <path d="M6 12c3-4 5 4 8 0s5 4 8 0 3-2 4-1" stroke="#6366f1" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity=".75" />
           </svg>
-          <div>
-            <b>FloodTwin-AI</b>
-            <span>Uncertainty-aware urban flood simulation</span>
-          </div>
+          FloodTwin-AI
         </div>
-
-        <div className="events" role="tablist" aria-label="Storm event">
-          {events.map((e, i) => (
-            <button key={e.id} role="tab" aria-selected={i === evIdx} className={i === evIdx ? 'on' : ''} onClick={() => changeEvent(i)}>
-              {e.id}
-              <small>{e.role === 'held-out' ? 'held out' : 'calibration'}</small>
-            </button>
-          ))}
-        </div>
-
-        <div className="top-badges">
-          <Badge tone="amber" icon={Icon.flask}>Synthetic data</Badge>
-          <Badge tone="neutral" title="Experiment class B: synthetic scenario experiment">Class B</Badge>
-          <Badge tone="neutral">Prototype v0</Badge>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <button className="pill pill-live" onClick={() => goTo(1)} title="Change storm event">
+            <span className="dot" style={{ width: 6, height: 6 }} />
+            {ev.id} · {ev.role === 'held-out' ? 'held out' : 'calibration'}
+          </button>
+          <Pill tone="amber" icon={<FlaskConical size={12} />}>Synthetic data</Pill>
+          <Pill title="Experiment class B: synthetic scenario experiment">Class B</Pill>
+          <Pill>Prototype v0</Pill>
+          <label className="toggle-switch" style={{ marginLeft: 8 }}>
+            <input type="checkbox" checked={presenter} onChange={(e) => setPresenter(e.target.checked)} />
+            <span className="track" />
+            Presenter
+          </label>
         </div>
       </header>
 
-      <nav className="rail" aria-label="Investigation steps">
-        <ol>
-          {STEPS.map((s, i) => (
-            <li key={s.key} className={`${i === step ? 'on' : ''} ${i < step ? 'past' : ''}`}>
-              <button onClick={() => goStep(i)}>
-                <span className="rail-n">{i < step ? Icon.check : i + 1}</span>
-                <span className="rail-t">
-                  <b>{s.title}</b>
-                  <small>{s.short}</small>
-                </span>
+      <Stage active={active} sectionTitle={sectionTitle} presenter={presenter} wide={active === 7} />
+
+      <nav className="progress" aria-label="Sections">
+        {LABELS.map((l, i) => (
+          <Tooltip key={l}>
+            <TooltipTrigger asChild>
+              <button className={i === active ? 'on' : ''} onClick={() => goTo(i)} aria-label={l} aria-current={i === active}>
+                <i />
               </button>
-            </li>
-          ))}
-        </ol>
-        <div className="rail-foot">
-          <label className="switch">
-            <input type="checkbox" checked={presenter} onChange={(e) => setPresenter(e.target.checked)} />
-            <span />
-            Presenter mode
-          </label>
-          <div className="keys">
-            <kbd>←</kbd> <kbd>→</kbd> steps · <kbd>P</kbd> presenter
-          </div>
-        </div>
+            </TooltipTrigger>
+            <TooltipContent side="right">{l}</TooltipContent>
+          </Tooltip>
+        ))}
       </nav>
+      <div className="counter">
+        <b>{String(active).padStart(2, '0')}</b> / {String(STEPS.length).padStart(2, '0')}
+      </div>
 
-      <main className={`main ${wide ? 'wide' : ''}`}>
-        {!wide && (
-          <section className="map-wrap">
-            <MapView
-              net={net}
-              images={images}
-              layers={layers}
-              setLayers={setLayers}
-              depthImg={depthImg}
-              deltaImg={deltaImg}
-              floodMode={floodMode}
-              showDelta={showD}
-              floodVol={step === 3 ? cfRun.floodVol : baseRun.floodVol}
-              freq={freq}
-              obsList={obsList}
-              selSeg={selSeg}
-              onSelectSeg={(i) => {
-                setSelSeg(i)
-                if (i != null && step !== 1) setSelNode(null)
-              }}
-              selNode={selNode}
-              onSelectNode={setSelNode}
-              focus={focus}
-              highlightSegs={highlight}
-              eventName={`${ev.name} · ${ev.role === 'held-out' ? 'held out' : 'calibration'}`}
-              stageLabel={stageLabel}
-            />
-            {presenter && (
-              <div className="caption" key={step}>
-                <div className="caption-step">
-                  {step + 1} / {STEPS.length}
-                </div>
-                <p>{stepDef.narration}</p>
-                <div className="caption-nav">
-                  <button onClick={() => goStep(step - 1)} disabled={step === 0} aria-label="Previous step">
-                    ←
-                  </button>
-                  <button onClick={() => goStep(step + 1)} disabled={step === STEPS.length - 1} aria-label="Next step">
-                    →
-                  </button>
-                </div>
-              </div>
-            )}
-          </section>
-        )}
+      {presenter && (
+        <div className="caption" key={active}>
+          <div className="n">{active === 0 ? 'INTRO' : `${active} / ${STEPS.length}`}</div>
+          <p>{narration}</p>
+        </div>
+      )}
 
-        <aside className="panel">
-          <header className="panel-head">
-            <span className="panel-n">{step + 1}</span>
-            <div>
-              <h2>{stepDef.title}</h2>
-              <p>{stepDef.question}</p>
-            </div>
-          </header>
-          <div className="panel-body" key={step}>
-            {panel}
-            {wide && presenter && (
-              <div className="caption caption-inline">
-                <div className="caption-step">
-                  {step + 1} / {STEPS.length}
-                </div>
-                <p>{stepDef.narration}</p>
-              </div>
-            )}
+      <main className="story">
+        <Hero ref={heroRef} />
+        <EventSection net={net} events={events} evIdx={evIdx} setEvIdx={changeEvent} ev={ev} />
+        <EvidenceSection net={net} selSeg={selSeg} setSelSeg={setSelSeg} />
+        <SimSection
+          ctx={{ net, ev, events, simStage, runSim, baseRun, baseSpread, spreadStats, match, evalAll, selNode, setSelNode }}
+        />
+        <CfSection ctx={{ net, cf, setCf, baseRun, cfRun, spreadStats, cfStats }} />
+        <InteractionSection inter={inter} />
+        <UncertaintySection ens={ens} cfLabel={cfLabel(cfDeferred)} />
+        <AiSection bench={bench} setBench={setBench} parity={parity} />
+        <footer className="footer-end">
+          <div className="kicker">End of the walkthrough</div>
+          <div className="display" style={{ fontSize: 'clamp(40px,5vw,84px)' }}>
+            Synthetic today. <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>Real data next.</span>
           </div>
-          <footer className="panel-foot">
-            <button className="limits-btn" onClick={() => setLimitsOpen((v) => !v)} aria-expanded={limitsOpen}>
-              {Icon.info} Limitations &amp; assumptions
-              <span className={limitsOpen ? 'flip' : ''}>{Icon.chevron}</span>
-            </button>
-            <div className="step-nav">
-              <button onClick={() => goStep(step - 1)} disabled={step === 0}>
-                Back
-              </button>
-              <button className="next" onClick={() => goStep(step + 1)} disabled={step === STEPS.length - 1}>
-                Next
-              </button>
-            </div>
-          </footer>
-          {limitsOpen && (
-            <div className="limits">
-              <b>{stepDef.title}</b>
-              <ul>
-                {stepDef.limits.map((l) => (
-                  <li key={l}>{l}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </aside>
+          <button className="btn" onClick={() => goTo(0)}>
+            Back to the start
+          </button>
+        </footer>
       </main>
-    </div>
+    </TooltipProvider>
   )
 }

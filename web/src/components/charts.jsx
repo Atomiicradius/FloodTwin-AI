@@ -17,7 +17,7 @@ const xOfStep = (t, x0, x1) => x0 + (t / (STEPS - 1)) * (x1 - x0)
 
 function Axis({ x0, x1, y0, y1, yTicks, yFmt, xTicks = true }) {
   return (
-    <g fontSize="9.5" fill={C.axis}>
+    <g fontSize="10.5" fill={C.axis}>
       {yTicks.map((v) => {
         const y = y1 - ((v - yTicks[0]) / (yTicks[yTicks.length - 1] - yTicks[0] || 1)) * (y1 - y0)
         return (
@@ -46,7 +46,7 @@ export function Hyetograph({ values, scale = 1, height = 130 }) {
   const w = 440
   const x0 = 34
   const x1 = w - 8
-  const y0 = 10
+  const y0 = 24
   const y1 = height - 22
   const max = Math.ceil((Math.max(...values) * Math.max(1, scale)) / 20) * 20
   const ticks = [0, max / 2, max]
@@ -54,7 +54,7 @@ export function Hyetograph({ values, scale = 1, height = 130 }) {
   return (
     <svg viewBox={`0 0 ${w} ${height}`} className="chart" role="img" aria-label="Rainfall intensity over time">
       <Axis x0={x0} x1={x1} y0={y0} y1={y1} yTicks={ticks} />
-      <text x="4" y="10" fontSize="9.5" fill={C.axis}>
+      <text x={x0 - 6} y="10" textAnchor="end" fontSize="10.5" fill={C.axis}>
         mm/h
       </text>
       {Array.from(values).map((v, t) => {
@@ -67,6 +67,7 @@ export function Hyetograph({ values, scale = 1, height = 130 }) {
             width={bw}
             height={h}
             rx="1.5"
+            className="grow"
             fill="url(#gRain)"
           />
         )
@@ -85,7 +86,7 @@ export function Hydrograph({ qin, cap, flood, height = 150 }) {
   const w = 440
   const x0 = 34
   const x1 = w - 8
-  const y0 = 12
+  const y0 = 26
   const y1 = height - 22
   const max = Math.max(cap * 1.25, ...qin) * 1.05
   const niceMax = Math.ceil(max / 2) * 2
@@ -98,14 +99,14 @@ export function Hydrograph({ qin, cap, flood, height = 150 }) {
   return (
     <svg viewBox={`0 0 ${w} ${height}`} className="chart" role="img" aria-label="Inflow against pipe capacity">
       <Axis x0={x0} x1={x1} y0={y0} y1={y1} yTicks={[0, niceMax / 2, niceMax]} />
-      <text x="4" y="10" fontSize="9.5" fill={C.axis}>
+      <text x={x0 - 6} y="10" textAnchor="end" fontSize="10.5" fill={C.axis}>
         m³/s
       </text>
-      <path d={area} fill={C.cyan} opacity="0.16" />
-      <path d={overArea} fill={C.coral} opacity="0.55" />
-      <path d={line} fill="none" stroke={C.cyan} strokeWidth="2" strokeLinejoin="round" />
+      <path d={area} fill={C.cyan} opacity="0.16" className="fade" />
+      <path d={overArea} fill={C.coral} opacity="0.55" className="fade" />
+      <path d={line} fill="none" stroke={C.cyan} strokeWidth="2" strokeLinejoin="round" className="draw" />
       <line x1={x0} x2={x1} y1={ys(cap)} y2={ys(cap)} stroke={C.amber} strokeWidth="1.5" strokeDasharray="5 4" />
-      <text x={x1} y={ys(cap) - 5} textAnchor="end" fontSize="9.5" fill={C.amber}>
+      <text x={x1} y={ys(cap) - 5} textAnchor="end" fontSize="10.5" fill={C.amber}>
         outflow capacity {fmt(cap, 1)} m³/s
       </text>
       {flood > 0 && (
@@ -142,7 +143,7 @@ export function Histogram({ base, cf, baseStats, cfStats, bins = 26 }) {
       {[0, 0.25, 0.5, 0.75, 1].map((f) => (
         <g key={f}>
           <line x1={xv(max * f)} x2={xv(max * f)} y1={y0} y2={y1} stroke={C.grid} />
-          <text x={xv(max * f)} y={y1 + 14} textAnchor="middle" fontSize="9.5" fill={C.axis}>
+          <text x={xv(max * f)} y={y1 + 14} textAnchor="middle" fontSize="10.5" fill={C.axis}>
             {fmt((max * f) / 1000, 0)}k
           </text>
         </g>
@@ -150,14 +151,14 @@ export function Histogram({ base, cf, baseStats, cfStats, bins = 26 }) {
       <rect x={xv(baseStats.p5)} y={y0 - 4} width={xv(baseStats.p95) - xv(baseStats.p5)} height="5" rx="2.5" fill={C.coral} opacity="0.55" />
       <rect x={xv(cfStats.p5)} y={y0 - 4} width={xv(cfStats.p95) - xv(cfStats.p5)} height="5" rx="2.5" fill={C.mint} opacity="0.55" />
       {hb.map((c, i) => (
-        <rect key={`b${i}`} x={x0 + i * bw + 0.5} y={y1 - (c / top) * (y1 - y0 - 8)} width={bw - 1} height={(c / top) * (y1 - y0 - 8)} fill={C.coral} opacity="0.55" rx="1.5" />
+        <rect key={`b${i}`} x={x0 + i * bw + 0.5} y={y1 - (c / top) * (y1 - y0 - 8)} width={bw - 1} height={(c / top) * (y1 - y0 - 8)} fill={C.coral} opacity="0.55" rx="1.5" className="grow" />
       ))}
       {hc.map((c, i) => (
-        <rect key={`c${i}`} x={x0 + i * bw + 0.5} y={y1 - (c / top) * (y1 - y0 - 8)} width={bw - 1} height={(c / top) * (y1 - y0 - 8)} fill={C.mint} opacity="0.6" rx="1.5" />
+        <rect key={`c${i}`} x={x0 + i * bw + 0.5} y={y1 - (c / top) * (y1 - y0 - 8)} width={bw - 1} height={(c / top) * (y1 - y0 - 8)} fill={C.mint} opacity="0.6" rx="1.5" className="grow" />
       ))}
       <line x1={xv(baseStats.med)} x2={xv(baseStats.med)} y1={y0} y2={y1} stroke={C.coral} strokeWidth="1.6" strokeDasharray="4 3" />
       <line x1={xv(cfStats.med)} x2={xv(cfStats.med)} y1={y0} y2={y1} stroke={C.mint} strokeWidth="1.6" strokeDasharray="4 3" />
-      <text x={x1} y={h - 2} textAnchor="end" fontSize="9.5" fill={C.axis}>
+      <text x={x1} y={h - 2} textAnchor="end" fontSize="10.5" fill={C.axis}>
         total simulated flood volume (m³)
       </text>
     </svg>
@@ -177,7 +178,7 @@ export function FanChart({ band, height = 180 }) {
   const w = 440
   const x0 = 38
   const x1 = w - 8
-  const y0 = 14
+  const y0 = 28
   const y1 = height - 22
   const max = Math.ceil(Math.max(...band.base.hi) / 5000) * 5000
   const ys = (v) => y1 - (v / max) * (y1 - y0)
@@ -185,13 +186,13 @@ export function FanChart({ band, height = 180 }) {
   return (
     <svg viewBox={`0 0 ${w} ${height}`} className="chart" role="img" aria-label="Cumulative flood volume at the hotspot across scenarios">
       <Axis x0={x0} x1={x1} y0={y0} y1={y1} yTicks={[0, max / 2, max]} yFmt={(v) => `${fmt(v / 1000, 0)}k`} />
-      <text x="4" y="10" fontSize="9.5" fill={C.axis}>
+      <text x={x0 - 6} y="10" textAnchor="end" fontSize="10.5" fill={C.axis}>
         m³ at J06
       </text>
-      <path d={bandPath(band.base.lo, band.base.hi, x0, x1, ys)} fill={C.coral} opacity="0.22" />
-      <path d={bandPath(band.cf.lo, band.cf.hi, x0, x1, ys)} fill={C.mint} opacity="0.26" />
-      <path d={med(band.base.md)} fill="none" stroke={C.coral} strokeWidth="2" />
-      <path d={med(band.cf.md)} fill="none" stroke={C.mint} strokeWidth="2" />
+      <path d={bandPath(band.base.lo, band.base.hi, x0, x1, ys)} fill={C.coral} opacity="0.22" className="fade" />
+      <path d={bandPath(band.cf.lo, band.cf.hi, x0, x1, ys)} fill={C.mint} opacity="0.26" className="fade" />
+      <path d={med(band.base.md)} fill="none" stroke={C.coral} strokeWidth="2" className="draw" />
+      <path d={med(band.cf.md)} fill="none" stroke={C.mint} strokeWidth="2" className="draw" />
     </svg>
   )
 }
@@ -217,14 +218,14 @@ export function Tornado({ items }) {
               {it.name}
             </text>
             <rect x={x} y={y + 3} width={Math.max(2, len)} height="16" rx="4" fill={it.rho >= 0 ? C.coral : C.cyan} opacity={weak ? 0.35 : 0.85} />
-            <text x={it.rho >= 0 ? cx + len + 6 : cx - len - 6} y={y + 15} fontSize="10.5" fill={C.text} textAnchor={it.rho >= 0 ? 'start' : 'end'} className="num">
+            <text x={it.rho >= 0 ? cx + len + 6 : cx + 8} y={y + 15} fontSize="11" fill={C.text} textAnchor="start" className="num">
               {it.rho > 0 ? '+' : ''}
               {it.rho.toFixed(2)} {strong ? '· strong' : weak ? '· weak' : ''}
             </text>
           </g>
         )
       })}
-      <text x={cx} y={h - 3} textAnchor="middle" fontSize="9.5" fill={C.axis}>
+      <text x={cx} y={h - 3} textAnchor="middle" fontSize="10.5" fill={C.axis}>
         rank correlation with total flood volume
       </text>
     </svg>
@@ -320,7 +321,7 @@ export function BenchChart({ curves, p }) {
       {yTicks.map((s) => (
         <g key={s}>
           <line x1={x0} x2={x1} y1={yl(s)} y2={yl(s)} stroke={C.grid} />
-          <text x={x0 - 8} y={yl(s) + 3} textAnchor="end" fontSize="9.5" fill={C.axis}>
+          <text x={x0 - 8} y={yl(s) + 3} textAnchor="end" fontSize="10.5" fill={C.axis}>
             {timeLabel(s)}
           </text>
         </g>
@@ -328,7 +329,7 @@ export function BenchChart({ curves, p }) {
       {[0, 1, 2, 3, 4, 5, 6].map((e) => (
         <g key={e}>
           <line x1={xl(10 ** e)} x2={xl(10 ** e)} y1={y0} y2={y1} stroke={C.grid} />
-          <text x={xl(10 ** e)} y={y1 + 14} textAnchor="middle" fontSize="9.5" fill={C.axis}>
+          <text x={xl(10 ** e)} y={y1 + 14} textAnchor="middle" fontSize="10.5" fill={C.axis}>
             {e === 0 ? '1' : e < 3 ? 10 ** e : e === 3 ? '1k' : e === 4 ? '10k' : e === 5 ? '100k' : '1M'}
           </text>
         </g>
@@ -339,8 +340,8 @@ export function BenchChart({ curves, p }) {
       {showBE && (
         <rect x={xl(be)} y={y0} width={x1 - xl(be)} height={y1 - y0} fill={C.mint} opacity="0.07" />
       )}
-      <path d={path('swmm')} fill="none" stroke={C.coral} strokeWidth="2.4" strokeLinecap="round" />
-      <path d={path('gnn')} fill="none" stroke={C.cyan} strokeWidth="2.4" strokeLinecap="round" />
+      <path d={path('swmm')} fill="none" stroke={C.coral} strokeWidth="2.4" strokeLinecap="round" className="draw" />
+      <path d={path('gnn')} fill="none" stroke={C.cyan} strokeWidth="2.4" strokeLinecap="round" className="draw" />
       {showBE && (
         <g>
           <line x1={xl(be)} x2={xl(be)} y1={y0} y2={y1} stroke={C.mint} strokeDasharray="4 4" />
@@ -350,11 +351,11 @@ export function BenchChart({ curves, p }) {
           </text>
         </g>
       )}
-      <g fontSize="10.5">
-        <text x={x1 - 4} y={yl(1e6 * p.tSwmm) + 14} textAnchor="end" fill={C.coral}>
+      <g fontSize="11.5">
+        <text x={x0 + 84} y={yl(Math.pow(10, (6 * 84) / (x1 - x0)) * p.tSwmm) + 26} fill={C.coral} stroke="#0a1220" strokeWidth="4" paintOrder="stroke">
           direct SWMM
         </text>
-        <text x={x1 - 4} y={yl(curves.fixed + 1e6 * p.tInfer) - 8} textAnchor="end" fill={C.cyan}>
+        <text x={x0 + 10} y={yl(curves.fixed) - 10} fill={C.cyan} stroke="#0a1220" strokeWidth="4" paintOrder="stroke">
           GNN incl. training + verification
         </text>
       </g>
@@ -380,10 +381,10 @@ export function Parity({ points }) {
         <g key={t}>
           <line x1={x0} x2={x1} y1={sy(t)} y2={sy(t)} stroke={C.grid} />
           <line x1={sx(t)} x2={sx(t)} y1={y0} y2={y1} stroke={C.grid} />
-          <text x={x0 - 5} y={sy(t) + 3} textAnchor="end" fontSize="9" fill={C.axis}>
+          <text x={x0 - 5} y={sy(t) + 3} textAnchor="end" fontSize="10" fill={C.axis}>
             {t >= 1000 ? `${t / 1000}k` : t}
           </text>
-          <text x={sx(t)} y={y1 + 12} textAnchor="middle" fontSize="9" fill={C.axis}>
+          <text x={sx(t)} y={y1 + 12} textAnchor="middle" fontSize="10" fill={C.axis}>
             {t >= 1000 ? `${t / 1000}k` : t}
           </text>
         </g>
@@ -392,10 +393,10 @@ export function Parity({ points }) {
       {points.map((p, i) => (
         <circle key={i} cx={sx(p.truth)} cy={sy(p.pred)} r="2.8" fill={C.cyan} opacity="0.7" />
       ))}
-      <text x={(x0 + x1) / 2} y={h - 6} textAnchor="middle" fontSize="9.5" fill={C.axis}>
+      <text x={(x0 + x1) / 2} y={h - 6} textAnchor="middle" fontSize="10.5" fill={C.axis}>
         reference flood volume (m³)
       </text>
-      <text x="10" y={h / 2 - 8} fontSize="9.5" fill={C.axis} transform={`rotate(-90 10 ${h / 2 - 8})`} textAnchor="middle">
+      <text x="10" y={h / 2 - 8} fontSize="10.5" fill={C.axis} transform={`rotate(-90 10 ${h / 2 - 8})`} textAnchor="middle">
         surrogate (m³)
       </text>
     </svg>
